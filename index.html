@@ -48,9 +48,10 @@ h1{font-family:'DM Serif Display',serif;font-size:28px;line-height:1.2;color:var
 
 input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:var(--rs);font-size:15px;margin-bottom:15px;outline:none;font-family:inherit}
 
-/* Resultaat & Disclaimer */
+/* Resultaat */
 .prijs-kaart{background:var(--wit);border:1px solid var(--schaduw);border-radius:var(--r);padding:20px;margin-bottom:15px}
-.spec-item{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--blauw-l);font-size:14px}
+.spec-item{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--blauw-l);font-size:13px;align-items:center}
+.spec-range{font-weight:600;color:var(--navy);text-align:right;margin-left:10px}
 .spec-totaal{display:flex;justify-content:space-between;padding:15px 0;font-weight:700;font-size:18px;color:var(--navy);border-top:2px solid var(--navy);margin-top:10px}
 .disclaimer{font-size:11px;color:var(--fa);line-height:1.5;margin-bottom:20px;padding:10px;background:#f9f9f9;border-radius:8px;border:1px solid var(--grijs)}
 
@@ -76,21 +77,21 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
   <div class="step active" id="s1">
     <img class="q-img" src="https://aquaservice.nl/photos/500x333/131b09-boot.jpg" alt="Refit">
     <div class="eyebrow">Refit Check</div>
-    <h1>Is jouw boot klaar voor een tweede leven?</h1>
+    <h1>Nieuw, maar dan beter.</h1>
     <div class="rv-box">
-      <div class="rv-text">"Dankzij de Refit Check van Aquaservice wist ik precies waar ik aan toe was. Het resultaat overtrof al mijn verwachtingen."</div>
+      <div class="rv-text">"Na de refit bij Aquaservice herkende ik mijn eigen schip niet meer terug. Werkelijk vakmanschap."</div>
       <span class="rv-auth">Hendrik J. — Project 'Stormvogel'</span>
     </div>
-    <button class="btn" onclick="go(2)">Start de check &rarr;</button>
+    <button class="btn" onclick="go(2)">Start mijn Refit Check &rarr;</button>
   </div>
 
   <div class="step" id="s2">
     <button class="btn-back" onclick="go(1)">&larr; terug</button>
     <img class="q-img" src="https://aquaservice.nl/photos/500x333/68395a-1.jpg" alt="Type">
     <div class="eyebrow">Stap 1</div>
-    <h1>Wat voor type boot heb je?</h1>
+    <h1>Wat voor boot heb je?</h1>
     <div class="rv-box">
-      <div class="rv-text">"Of het nu een klassiek zeiljacht of een moderne motorboot is, wij hebben de expertise in huis."</div>
+      <div class="rv-text">"Onze loodsen zijn speciaal uitgerust voor zowel motorjachten als zeilschepen."</div>
     </div>
     <div class="og">
       <button class="ob" onclick="sel(this,'type','Zeilboot',3)">⛵ Zeilboot</button>
@@ -101,59 +102,61 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
 
   <div class="step" id="s3">
     <button class="btn-back" onclick="go(2)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/500x333/7d23a6-8.jpg" alt="Naam">
-    <div class="eyebrow">Stap 2</div>
-    <h1>Hoe heet je trotse bezit?</h1>
+    <img class="q-img" src="https://aquaservice.nl/photos/500x333/b2c3d4-water.jpg" alt="Kwaliteit">
+    <div class="eyebrow">Kwaliteit voorop</div>
+    <h1>Uw droom, onze zorg.</h1>
     <div class="rv-box">
-      <div class="rv-text">"Een persoonlijke aanpak vinden we belangrijk. Elke boot heeft zijn eigen verhaal."</div>
+      <div class="rv-text">"Wat ik zo fijn vond is de tussentijdse communicatie. Ik werd constant op de hoogte gehouden met foto's van de voortgang."</div>
+      <span class="rv-auth">Klaas B. — Jacht 'Sundance'</span>
     </div>
-    <input class="f" id="bootname" placeholder="Naam van de boot...">
-    <button class="btn" onclick="go(4)">Volgende stap &rarr;</button>
+    <button class="btn" onclick="go(4)">Volgende &rarr;</button>
   </div>
 
   <div class="step" id="s4">
     <button class="btn-back" onclick="go(3)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/500x333/a0f1b2-12.jpg" alt="Lengte">
-    <div class="eyebrow">Stap 3</div>
-    <h1>Wat is de lengte van de boot?</h1>
+    <img class="q-img" src="https://aquaservice.nl/photos/500x333/7d23a6-8.jpg" alt="Naam">
+    <div class="eyebrow">Stap 2</div>
+    <h1>Hoe heet je trotse bezit?</h1>
     <div class="rv-box">
-      <div class="rv-text">"Van compacte tenders tot grote jachten, onze faciliteiten zijn op alles voorbereid."</div>
+      <div class="rv-text">"Elk project krijgt bij ons een persoonlijke benadering, te beginnen bij de naam op de spiegel."</div>
     </div>
-    <div class="og">
-      <button class="ob" onclick="sel(this,'lengte','Tot 8 meter',5)">Tot 8 meter</button>
-      <button class="ob" onclick="sel(this,'lengte','8 tot 12 meter',5)">8 tot 12 meter</button>
-      <button class="ob" onclick="sel(this,'lengte','12 meter+',5)">12 meter en langer</button>
-    </div>
+    <input class="f" id="bootname" placeholder="Naam van de boot...">
+    <button class="btn" onclick="go(5)">Volgende stap &rarr;</button>
   </div>
 
   <div class="step" id="s5">
     <button class="btn-back" onclick="go(4)">&larr; terug</button>
+    <img class="q-img" src="https://aquaservice.nl/photos/500x333/a0f1b2-12.jpg" alt="Lengte">
+    <div class="eyebrow">Stap 3</div>
+    <h1>Wat is de lengte?</h1>
+    <div class="rv-box">
+      <div class="rv-text">"Of het nu gaat om 7 of 15 meter, wij hebben de juiste kranen en ruimte voor uw schip."</div>
+    </div>
+    <div class="og">
+      <button class="ob" onclick="sel(this,'lengte','Tot 8 meter',6)">Tot 8 meter</button>
+      <button class="ob" onclick="sel(this,'lengte','8 tot 12 meter',6)">8 tot 12 meter</button>
+      <button class="ob" onclick="sel(this,'lengte','12 meter+',6)">12 meter en langer</button>
+    </div>
+  </div>
+
+  <div class="step" id="s6">
+    <button class="btn-back" onclick="go(5)">&larr; terug</button>
     <img class="q-img" src="https://aquaservice.nl/photos/500x333/c4e5f6-techniek.jpg" alt="Werk">
     <div class="eyebrow">Stap 4</div>
-    <h1>Wat mogen we verbeteren?</h1>
+    <h1>Wat mogen we aanpakken?</h1>
     <div class="rv-box">
-      <div class="rv-text">"De combinatie van technisch onderhoud en esthetische refit onder één dak is echt uniek."</div>
+      <div class="rv-text">"Van schilderwerk tot motorrevisie: alles onder één dak bespaart tijd en kopzorgen."</div>
     </div>
     <div class="og">
       <button class="ob" onclick="tog(this,'Schilderwerk Romp', 4500)">🎨 Schilderwerk Romp</button>
       <button class="ob" onclick="tog(this,'Schilderwerk Opbouw', 4800)">🖌️ Schilderwerk Opbouw</button>
       <button class="ob" onclick="tog(this,'Elektrische installatie', 3200)">⚡ Elektrische installatie</button>
-      <button class="ob" onclick="tog(this,'Motor onderhoud', 4200)">⚙️ Motor onderhoud</button>
-      <button class="ob" onclick="tog(this,'Teakdek renovatie', 6500)">🪵 Teakdek / Flexiteek</button>
+      <button class="ob" onclick="tog(this,'Motor onderhoud/vervanging', 4500)">⚙️ Motor onderhoud / vervanging</button>
+      <button class="ob" onclick="tog(this,'Boeg- of hekschroef', 3500)">🔄 Boeg- of hekschroef</button>
+      <button class="ob" onclick="tog(this,'Teakdek renovatie', 6000)">🪵 Teakdek renovatie / Flexiteek</button>
+      <button class="ob" onclick="tog(this,'Osmose behandeling', 2500)">🛡️ Osmose behandeling</button>
     </div>
-    <button class="btn" id="btn-cond" onclick="go(6)" disabled>Volgende stap &rarr;</button>
-  </div>
-
-  <div class="step" id="s6">
-    <button class="btn-back" onclick="go(5)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/500x333/b2c3d4-water.jpg" alt="Kwaliteit">
-    <div class="eyebrow">Onze Belofte</div>
-    <h1>Vakmanschap & Passie</h1>
-    <div class="rv-box">
-      <div class="rv-text">"Het team van Aquaservice werkt met zoveel passie. Je ziet de kwaliteit terug in elk detail van het schip."</div>
-      <span class="rv-auth">Pieter B. — Jacht 'Sundance'</span>
-    </div>
-    <button class="btn" onclick="go(7)">Foto uploaden &rarr;</button>
+    <button class="btn" id="btn-cond" onclick="go(7)" disabled>Volgende stap &rarr;</button>
   </div>
 
   <div class="step" id="s7">
@@ -162,10 +165,10 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
     <div class="eyebrow">Stap 5</div>
     <h1>Upload een foto van de boot</h1>
     <div class="rv-box">
-      <div class="rv-text">"Een foto helpt onze experts om direct een goed beeld te krijgen van de huidige staat."</div>
+      <div class="rv-text">"Een foto helpt ons om de huidige staat van het schip direct goed in te schatten."</div>
     </div>
     <div class="ob" onclick="document.getElementById('ph-in').click()" style="justify-content:center; border:2px dashed var(--fa); padding:30px">
-      📸 Klik hier om een foto te kiezen
+      📸 Klik om een foto te kiezen
     </div>
     <input type="file" id="ph-in" accept="image/*" style="display:none" onchange="handleFile(this)">
     <div id="preview-container">
@@ -178,7 +181,7 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
     <button class="btn-back" onclick="go(7)">&larr; terug</button>
     <img class="q-img" src="https://aquaservice.nl/photos/500x333/131b09-boot.jpg" alt="Contact">
     <div class="eyebrow">Afronden</div>
-    <h1>Waar kunnen we de indicatie heen sturen?</h1>
+    <h1>Je gegevens</h1>
     <input class="f" id="fname" placeholder="Je voornaam *">
     <input class="f" id="email" type="email" placeholder="Je e-mailadres *">
     
@@ -191,7 +194,7 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
   </div>
 
   <div class="step" id="s-result">
-    <div class="eyebrow">Klaar!</div>
+    <div class="eyebrow">Gereed</div>
     <h1 id="res-hl">Jouw Indicatie</h1>
     
     <div class="prijs-kaart">
@@ -203,10 +206,10 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
     </div>
 
     <div class="disclaimer">
-      <strong>Disclaimer:</strong> Deze indicatie is een schatting op basis van gemiddelde prijzen. De definitieve prijs kan pas worden bepaald na een fysieke inspectie. Er kunnen geen rechten aan deze berekening worden ontleend.
+      <strong>Let op:</strong> Deze indicatie is een schatting. De definitieve prijs kan pas na een fysieke schouw worden bepaald.
     </div>
     
-    <button class="btn" onclick="location.href='https://aquaservice.nl/#contact'">Vrijblijvend gesprek plannen</button>
+    <button class="btn" onclick="location.href='https://aquaservice.nl/#contact'">Vrijblijvende afspraak plannen</button>
   </div>
 
 </div>
@@ -262,20 +265,23 @@ function showResult() {
   }
 
   let mult = st.lengte === '8 tot 12 meter' ? 1.75 : (st.lengte === '12 meter+' ? 2.9 : 1);
-  let total = 0;
+  let totalMin = 0;
+  let totalMax = 0;
   let html = "";
 
   st.selectedItems.forEach(item => {
-    let p = Math.round((item.price * mult) / 100) * 100;
-    total += p;
-    html += `<div class="spec-item"><span>${item.name}</span><span>€ ${p.toLocaleString('nl-NL')}</span></div>`;
+    let base = item.price * mult;
+    let pMin = Math.round(base / 100) * 100;
+    let pMax = Math.round((base * 1.35) / 100) * 100;
+    totalMin += pMin;
+    totalMax += pMax;
+    html += `<div class="spec-item"><span>${item.name}</span><span class="spec-range">€ ${pMin.toLocaleString('nl-NL')} - € ${pMax.toLocaleString('nl-NL')}</span></div>`;
   });
 
   go(9);
   document.getElementById('spec-list').innerHTML = html;
-  document.getElementById('total-price').textContent = `€ ${total.toLocaleString('nl-NL')} - € ${(Math.round(total*1.35/100)*100).toLocaleString('nl-NL')}`;
+  document.getElementById('total-price').textContent = `€ ${totalMin.toLocaleString('nl-NL')} - € ${totalMax.toLocaleString('nl-NL')}`;
 
-  // De push naar de Webhook
   fetch('https://n8n-aqs.vimdesk.io/webhook/164b60d5-48a0-4f2f-8202-4a47e4fd2bef', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
@@ -286,7 +292,7 @@ function showResult() {
       boot_type: st.type,
       boot_lengte: st.lengte,
       werkzaamheden: st.selectedItems.map(i => i.name).join(', '),
-      indicatie_totaal: total,
+      indicatie_range: `€ ${totalMin} - € ${totalMax}`,
       foto_base64: st.photoData
     })
   });
