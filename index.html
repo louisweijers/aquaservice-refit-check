@@ -32,8 +32,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--grijs);color:var(--tekst)
 .eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rood);margin-bottom:8px}
 h1{font-family:'DM Serif Display',serif;font-size:28px;line-height:1.2;color:var(--navy);margin-bottom:12px}
 
-/* Foto & Review Style */
-.q-img{width:100%;height:220px;object-fit:cover;border-radius:var(--r);margin-bottom:15px;box-shadow:var(--schaduw)}
+/* Review Box */
 .rv-box{background:rgba(25, 42, 103, 0.05);padding:15px;border-radius:12px;margin-bottom:20px;border-left:3px solid var(--rood)}
 .rv-text{font-size:14px;font-style:italic;color:var(--mu);line-height:1.5}
 .rv-auth{font-size:12px;font-weight:700;margin-top:8px;color:var(--navy);display:block}
@@ -75,7 +74,6 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
 <div class="container">
 
   <div class="step active" id="s1">
-    <img class="q-img" src="https://aquaservice.nl/photos/500x333/131b09-boot.jpg" alt="Refit">
     <div class="eyebrow">Refit Check</div>
     <h1>Nieuw, maar dan beter.</h1>
     <div class="rv-box">
@@ -87,7 +85,6 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
 
   <div class="step" id="s2">
     <button class="btn-back" onclick="go(1)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/500x333/68395a-1.jpg" alt="Type">
     <div class="eyebrow">Stap 1</div>
     <h1>Wat voor boot heb je?</h1>
     <div class="rv-box">
@@ -102,7 +99,6 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
 
   <div class="step" id="s3">
     <button class="btn-back" onclick="go(2)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/500x333/b2c3d4-water.jpg" alt="Kwaliteit">
     <div class="eyebrow">Kwaliteit voorop</div>
     <h1>Uw droom, onze zorg.</h1>
     <div class="rv-box">
@@ -114,7 +110,6 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
 
   <div class="step" id="s4">
     <button class="btn-back" onclick="go(3)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/500x333/7d23a6-8.jpg" alt="Naam">
     <div class="eyebrow">Stap 2</div>
     <h1>Hoe heet je trotse bezit?</h1>
     <div class="rv-box">
@@ -126,7 +121,6 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
 
   <div class="step" id="s5">
     <button class="btn-back" onclick="go(4)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/500x333/a0f1b2-12.jpg" alt="Lengte">
     <div class="eyebrow">Stap 3</div>
     <h1>Wat is de lengte?</h1>
     <div class="rv-box">
@@ -141,11 +135,10 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
 
   <div class="step" id="s6">
     <button class="btn-back" onclick="go(5)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/500x333/c4e5f6-techniek.jpg" alt="Werk">
     <div class="eyebrow">Stap 4</div>
-    <h1>Wat mogen we aanpakken?</h1>
+    <h1>Welke wensen heb je?</h1>
     <div class="rv-box">
-      <div class="rv-text">"Van schilderwerk tot motorrevisie: alles onder één dak bespaart tijd en kopzorgen."</div>
+      <div class="rv-text">"De combinatie van technisch onderhoud en esthetische refit onder één dak is echt uniek."</div>
     </div>
     <div class="og">
       <button class="ob" onclick="tog(this,'Schilderwerk Romp', 4500)">🎨 Schilderwerk Romp</button>
@@ -155,13 +148,15 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
       <button class="ob" onclick="tog(this,'Boeg- of hekschroef', 3500)">🔄 Boeg- of hekschroef</button>
       <button class="ob" onclick="tog(this,'Teakdek renovatie', 6000)">🪵 Teakdek renovatie / Flexiteek</button>
       <button class="ob" onclick="tog(this,'Osmose behandeling', 2500)">🛡️ Osmose behandeling</button>
+      <button class="ob" onclick="tog(this,'Interieur vernieuwing', 5500)">🛋️ Interieur vernieuwing</button>
+      <button class="ob" onclick="tog(this,'Navigatie apparatuur', 2800)">🗺️ Navigatie apparatuur</button>
+      <button class="ob" onclick="tog(this,'RVS & Beslag', 1800)">⚓ RVS & Beslag</button>
     </div>
     <button class="btn" id="btn-cond" onclick="go(7)" disabled>Volgende stap &rarr;</button>
   </div>
 
   <div class="step" id="s7">
     <button class="btn-back" onclick="go(6)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/500x333/68395a-1.jpg" alt="Foto">
     <div class="eyebrow">Stap 5</div>
     <h1>Upload een foto van de boot</h1>
     <div class="rv-box">
@@ -179,7 +174,6 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
 
   <div class="step" id="s8">
     <button class="btn-back" onclick="go(7)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/500x333/131b09-boot.jpg" alt="Contact">
     <div class="eyebrow">Afronden</div>
     <h1>Je gegevens</h1>
     <input class="f" id="fname" placeholder="Je voornaam *">
@@ -187,14 +181,14 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
     
     <label class="cb-row">
       <input type="checkbox" id="consent">
-      <span>Ik ga ermee akkoord dat Aquaservice contact met mij opneemt over deze aanvraag.</span>
+      <span>Ik ga ermee akkoord dat Aquaservice contact met mij opneemt.</span>
     </label>
 
     <button class="btn" id="btn-sub" onclick="showResult()">Bekijk mijn indicatie &rarr;</button>
   </div>
 
   <div class="step" id="s-result">
-    <div class="eyebrow">Gereed</div>
+    <div class="eyebrow">KLAAR!</div>
     <h1 id="res-hl">Jouw Indicatie</h1>
     
     <div class="prijs-kaart">
@@ -206,10 +200,10 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
     </div>
 
     <div class="disclaimer">
-      <strong>Let op:</strong> Deze indicatie is een schatting. De definitieve prijs kan pas na een fysieke schouw worden bepaald.
+      Disclaimer: Deze indicatie is een schatting op basis van gemiddelde prijzen. De definitieve prijs kan pas worden bepaald na een fysieke inspectie. Er kunnen geen rechten aan deze berekening worden ontleend.
     </div>
     
-    <button class="btn" onclick="location.href='https://aquaservice.nl/#contact'">Vrijblijvende afspraak plannen</button>
+    <button class="btn" onclick="location.href='https://aquaservice.nl/#contact'">Vrijblijvend gesprek plannen</button>
   </div>
 
 </div>
