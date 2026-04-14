@@ -44,7 +44,7 @@ h1{font-family:'DM Serif Display',serif;font-size:28px;line-height:1.2;color:var
 .btn:disabled{background:#ccd1d9;cursor:not-allowed}
 .btn-back{background:none;border:none;font-size:13px;color:var(--fa);cursor:pointer;margin-bottom:15px}
 
-input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:var(--rs);font-size:15px;margin-bottom:10px;outline:none;font-family:inherit;width:100%}
+input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:var(--rs);font-size:15px;margin-bottom:10px;outline:none;font-family:inherit}
 
 .prijs-kaart{background:var(--wit);border:1px solid var(--schaduw);border-radius:var(--r);padding:20px;margin-bottom:15px}
 .spec-item{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--blauw-l);font-size:13px;align-items:center}
@@ -106,10 +106,6 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
       <button class="ob" onclick="sel(this,'bouwjaar_indicatie','Tussen 10 en 25 jaar',5)">⚓ Tussen 10 en 25 jaar</button>
       <button class="ob" onclick="sel(this,'bouwjaar_indicatie','Ouder dan 25 jaar',5)">🏛️ Klassieker (25+ jaar)</button>
     </div>
-    <div class="rv-box">
-      <div class="rv-text">"Ze weten precies wat een schip van deze leeftijd nodig heeft om weer jaren mee te gaan."</div>
-      <span class="rv-auth">Jan-Willem T.</span>
-    </div>
   </div>
 
   <div class="step" id="s5">
@@ -165,7 +161,7 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
     <img class="q-img" src="https://aquaservice.nl/photos/popup/87644b-img-5507.jpg">
     <h1>Uw Indicatie</h1>
     <div class="prijs-kaart"><div id="spec-list"></div><div class="spec-totaal"><span>Totaal indicatie</span><span id="total-price">€ 0,-</span></div></div>
-    <div class="disclaimer">**Disclaimer:** Deze indicatie is een schatting op basis van gemiddelden. De definitieve prijs wordt vastgesteld na een fysieke inspectie door onze experts.</div>
+    <div class="disclaimer">**Disclaimer:** Deze indicatie is een schatting op basis van gemiddelden. De definitieve prijs wordt vastgesteld na een fysieke inspectie.</div>
     <button class="btn" id="btn-contact" onclick="requestContact()">Vrijblijvend gesprek plannen</button>
     <div id="avg-msg">Bedankt! Wij nemen zo spoedig mogelijk contact met u op.</div>
   </div>
@@ -212,13 +208,15 @@ function tog(btn, name, price) {
 }
 
 function handleFile(inp) {
-  const reader = new FileReader();
-  reader.onload = e => {
-    st.photoData = "IMAGE_ATTACHED"; 
-    document.getElementById('preview-container').style.display = 'block';
-    document.getElementById('preview-img').src = e.target.result;
-  };
-  reader.readAsDataURL(inp.files[0]);
+  if (inp.files && inp.files[0]) {
+    const reader = new FileReader();
+    reader.onload = e => {
+      st.photoData = e.target.result; // Slaat echte Base64 data op
+      document.getElementById('preview-container').style.display = 'block';
+      document.getElementById('preview-img').src = e.target.result;
+    };
+    reader.readAsDataURL(inp.files[0]);
+  }
 }
 
 function showResult() {
@@ -226,6 +224,7 @@ function showResult() {
   st.email = document.getElementById('email').value;
   st.telefoon = document.getElementById('phone').value;
   st.bootname = document.getElementById('bootname').value;
+  
   if(!st.voornaam || !st.email) { alert("Vul a.u.b. uw naam en email in."); return; }
   
   let mult = st.lengte === '8 tot 12 meter' ? 1.75 : (st.lengte === '12 meter+' ? 2.9 : 1);
@@ -243,18 +242,24 @@ function showResult() {
   go(9);
   document.getElementById('spec-list').innerHTML = html;
   document.getElementById('total-price').textContent = st.totaal_indicatie;
-  sendToN8N();
+  // sendToN8N hier verwijderd om dubbele mails te voorkomen.
 }
 
 function requestContact() {
   st.contact_verzoek = "JA";
   document.getElementById('btn-contact').style.display = 'none';
   document.getElementById('avg-msg').style.display = 'block';
-  sendToN8N();
+  sendToN8N(); // Mail wordt nu pas verstuurd als er echt op de knop is geklikt.
 }
 
 function sendToN8N() {
-  fetch(WEBHOOK_URL, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(st) });
+  fetch(WEBHOOK_URL, { 
+    method: 'POST', 
+    headers: {'Content-Type': 'application/json'}, 
+    body: JSON.stringify(st) 
+  })
+  .then(response => console.log('Verzonden naar n8n'))
+  .catch(error => console.error('Fout bij verzenden:', error));
 }
 </script>
 </body>
