@@ -43,7 +43,6 @@ h1{font-family:'DM Serif Display',serif;font-size:28px;line-height:1.2;color:var
 .ob.sel{border:2px solid var(--rood);background:var(--rood-l);color:var(--rood-d)}
 
 .btn{background:var(--rood);color:#fff;border:none;border-radius:var(--rs);padding:18px;font-size:16px;font-weight:600;cursor:pointer;width:100%;transition:background .2s}
-.btn:disabled{background:#ccd1d9;cursor:not-allowed}
 .btn-back{background:none;border:none;font-size:13px;color:var(--fa);cursor:pointer;margin-bottom:15px}
 
 input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:var(--rs);font-size:15px;margin-bottom:15px;outline:none;font-family:inherit}
@@ -52,7 +51,7 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
 .prijs-kaart{background:var(--wit);border:1px solid var(--schaduw);border-radius:var(--r);padding:20px;margin-bottom:15px}
 .spec-item{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--blauw-l);font-size:14px}
 .spec-totaal{display:flex;justify-content:space-between;padding:15px 0;font-weight:700;font-size:18px;color:var(--navy);border-top:2px solid var(--navy);margin-top:10px}
-.disclaimer{font-size:12px;color:var(--fa);line-height:1.5;margin-bottom:20px;padding:10px;background:#f9f9f9;border-radius:8px}
+.disclaimer{font-size:11px;color:var(--fa);line-height:1.5;margin-bottom:20px;padding:10px;background:#f9f9f9;border-radius:8px;border:1px solid var(--grijs)}
 
 .cb-row{display:flex;gap:10px;margin-bottom:25px;align-items:flex-start;cursor:pointer;font-size:13px;line-height:1.5;color:var(--mu)}
 
@@ -105,7 +104,7 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
     <div class="eyebrow">Persoonlijk</div>
     <h1>Hoe heet je schip?</h1>
     <div class="rv-box">
-      <div class="rv-text">"Een naam geeft een schip haar eigen ziel en karakter."</div>
+      <div class="rv-text">"Een naam geeft een schip haar eigen ziel en karakter. Wij zorgen dat ze weer straalt."</div>
     </div>
     <input class="f" id="bootname" placeholder="Bijv. 'De Blauwe Walvis'...">
     <button class="btn" onclick="go(4)">Volgende stap &rarr;</button>
@@ -117,7 +116,7 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
     <div class="eyebrow">Specificaties</div>
     <h1>Wat is de lengte?</h1>
     <div class="rv-box">
-      <div class="rv-text">"Van compacte tender tot ruim jacht, wij hebben de faciliteiten voor elke maat."</div>
+      <div class="rv-text">"Van compacte tender tot ruim jacht, onze loodsen zijn ingericht op elke afmeting."</div>
     </div>
     <div class="og">
       <button class="ob" onclick="sel(this,'lengte','Tot 8 meter',5)">Tot 8 meter</button>
@@ -148,11 +147,23 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
 
   <div class="step" id="s6">
     <button class="btn-back" onclick="go(5)">&larr; terug</button>
+    <img class="q-img" src="https://aquaservice.nl/photos/500x333/68395a-1.jpg" alt="Review">
+    <div class="eyebrow">Kwaliteit gewaarborgd</div>
+    <h1>Vakmanschap in elk detail</h1>
+    <div class="rv-box">
+      <div class="rv-text">"Wat ik zo waardeer is de transparantie. Geen verrassingen achteraf, maar een duidelijk plan van aanpak."</div>
+      <span class="rv-auth">Pieter H. — Project 'Navis'</span>
+    </div>
+    <button class="btn" onclick="go(7)">Foto toevoegen &rarr;</button>
+  </div>
+
+  <div class="step" id="s7">
+    <button class="btn-back" onclick="go(6)">&larr; terug</button>
     <img class="q-img" src="https://aquaservice.nl/photos/500x333/b2c3d4-water.jpg" alt="Foto uploaden">
     <div class="eyebrow">Visualisatie</div>
     <h1>Stuur een foto mee</h1>
     <div class="rv-box">
-      <div class="rv-text">"Dankzij de foto's konden de vakmensen van Aquaservice vooraf al een zeer scherpe inschatting maken."</div>
+      <div class="rv-text">"Een foto zegt meer dan duizend woorden en helpt onze experts bij de voorbereiding."</div>
     </div>
     <div class="ob" onclick="document.getElementById('ph-in').click()" style="justify-content:center; border:2px dashed var(--fa); padding:30px">
       📸 Klik om een foto te uploaden
@@ -161,12 +172,12 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
     <div id="preview-container">
       <img id="preview-img" src="">
     </div>
-    <button class="btn" style="margin-top:20px" onclick="go(7)">Naar contactgegevens &rarr;</button>
+    <button class="btn" style="margin-top:20px" onclick="go(8)">Naar contactgegevens &rarr;</button>
   </div>
 
-  <div class="step" id="s7">
-    <button class="btn-back" onclick="go(6)">&larr; terug</button>
-    <div class="eyebrow">Bijna klaar</div>
+  <div class="step" id="s8">
+    <button class="btn-back" onclick="go(7)">&larr; terug</button>
+    <div class="eyebrow">De laatste stap</div>
     <h1>Je gegevens</h1>
     <input class="f" id="fname" placeholder="Voornaam *">
     <input class="f" id="email" type="email" placeholder="E-mailadres *">
@@ -192,7 +203,7 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
     </div>
 
     <div class="disclaimer">
-      <strong>Disclaimer:</strong> Deze indicatie is gebaseerd op gemiddelde prijzen en de door u verstrekte informatie. Het betreft geen definitieve offerte. Aan deze berekening kunnen geen rechten worden ontleend. Na een fysieke inspectie ontvangt u een officieel voorstel.
+      <strong>Let op:</strong> Deze indicatie is een schatting gebaseerd op gemiddelde prijzen en de door u verstrekte informatie. Het betreft geen bindende offerte. Aan deze berekening kunnen geen rechten worden ontleend. Na een fysieke inspectie op locatie ontvangt u een officieel voorstel.
     </div>
     
     <button class="btn" onclick="location.href='https://aquaservice.nl/#contact'">Vrijblijvende afspraak plannen</button>
@@ -202,14 +213,14 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
 
 <script>
 var st = { type:'', bootname:'', lengte:'', selectedItems:[] };
-var steps = ['s1','s2','s3','s4','s5','s6','s7','s-result'];
+var steps = ['s1','s2','s3','s4','s5','s6','s7','s8','s-result'];
 
 function go(n) {
   steps.forEach((id, i) => {
     document.getElementById(id).style.display = (i + 1 === n) ? 'block' : 'none';
     if(i+1 === n) document.getElementById(id).classList.add('active');
   });
-  let pct = (n / steps.length) * 100;
+  let pct = (n / (steps.length)) * 100;
   document.getElementById('prog-fill').style.width = pct + '%';
   window.scrollTo(0,0);
 }
@@ -245,7 +256,7 @@ function handleFile(inp) {
 
 function showResult() {
   if(!document.getElementById('consent').checked) {
-    alert("Vink s.v.p. het akkoord aan.");
+    alert("Vink s.v.p. het akkoord aan om uw indicatie te bekijken.");
     return;
   }
 
@@ -259,7 +270,7 @@ function showResult() {
     html += `<div class="spec-item"><span>${item.name}</span><span>€ ${p.toLocaleString('nl-NL')}</span></div>`;
   });
 
-  go(8);
+  go(9);
   document.getElementById('spec-list').innerHTML = html;
   document.getElementById('total-price').textContent = `€ ${total.toLocaleString('nl-NL')} - € ${(Math.round(total*1.35/100)*100).toLocaleString('nl-NL')}`;
 
