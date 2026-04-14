@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Refit check — Bonsink Aquaservice</title>
+<title>Refit Check — Bonsink Aquaservice</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
 :root{
@@ -27,7 +27,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--grijs);color:var(--tekst)
 @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .eyebrow{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--rood);margin-bottom:6px}
 h1{font-family:'DM Serif Display',serif;font-size:26px;line-height:1.2;color:var(--navy);margin-bottom:6px}
-.sub{font-size:14px;color:var(--mu);margin-bottom:20px;line-height:1.6}
+.sub{font-size:14px;color:var(--mu);margin-bottom:20px;line-height:1.6;font-style: italic;}
 .rv-kaart{background:var(--wit);border-radius:var(--r);overflow:hidden;border:1px solid rgba(25,42,103,0.1);margin-bottom:20px}
 .rv-foto{width:100%;height:220px;object-fit:cover;display:block}
 .rv-body{border-left:3px solid var(--rood);padding:16px}
@@ -35,7 +35,7 @@ h1{font-family:'DM Serif Display',serif;font-size:26px;line-height:1.2;color:var
 .rv-a{font-size:12px;color:var(--fa);margin-top:8px;font-weight:500}
 .rv-sterren{color:var(--rood);font-size:12px;margin-top:4px}
 .og{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px}
-.ob{background:var(--wit);border:1px solid var(--schaduw);border-radius:var(--r);padding:14px;cursor:pointer;text-align:left;color:var(--tekst);transition:all .15s}
+.ob{background:var(--wit);border:1px solid var(--schaduw);border-radius:var(--r);padding:14px;cursor:pointer;text-align:left;color:var(--tekst);transition:all .15s;display: flex;align-items: center;gap: 8px;}
 .ob:hover{border-color:var(--rood);background:var(--rood-l)}
 .ob.sel{border:2px solid var(--rood);background:var(--rood-l)}
 .btn{background:var(--rood);color:#fff;border:none;border-radius:var(--rs);padding:16px;font-size:15px;font-weight:600;cursor:pointer;width:100%;margin-top:10px}
@@ -43,6 +43,7 @@ h1{font-family:'DM Serif Display',serif;font-size:26px;line-height:1.2;color:var
 .btn-back{background:none;border:none;font-size:12px;color:var(--fa);cursor:pointer;margin-bottom:15px}
 input.f,textarea.f{width:100%;padding:12px;border:1px solid var(--schaduw);border-radius:var(--rs);font-size:14px;margin-bottom:10px}
 .prijs-kaart{background:var(--wit);border:1px solid var(--schaduw);border-radius:var(--r);padding:20px;margin-bottom:15px;text-align:center}
+.prijs-label{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--mu);margin-bottom:5px}
 .prijs-getal{font-family:'DM Serif Display',serif;font-size:32px;color:var(--navy)}
 </style>
 </head>
@@ -56,43 +57,44 @@ input.f,textarea.f{width:100%;padding:12px;border:1px solid var(--schaduw);borde
 </div>
 
 <div class="prog-wrap">
-  <div class="prog-meta"><span id="sc-label">Start</span><span id="sc-pct">0%</span></div>
+  <div class="prog-meta"><span id="sc-label">Referentie</span><span id="sc-pct">0%</span></div>
   <div class="prog-track"><div class="prog-fill" id="prog-fill"></div></div>
 </div>
 
 <div class="container">
 
 <div class="step active" id="s0">
-  <div class="eyebrow">Referentie</div>
-  <h1>"Vakmensen met passie voor techniek"</h1>
+  <div class="eyebrow">Onze trots</div>
+  <h1>"Als nieuw, maar dan beter."</h1>
   <div class="rv-kaart">
     <img class="rv-foto" src="https://aquaservice.nl/photos/500x333/131b09-boot.jpg" alt="Refit project">
     <div class="rv-body">
-      <div class="rv-t">"Onze boot is technisch weer als nieuw. Het proces was transparant en het resultaat prachtig. Een absolute aanrader voor iedere booteigenaar."</div>
+      <div class="rv-t">"De passie voor techniek spat ervan af bij Bonsink. Onze boot is niet alleen mooier, maar ook technisch veel betrouwbaarder geworden."</div>
       <div class="rv-a">Jan de Vries — Project 'De Vrijheid'</div>
       <div class="rv-sterren">★★★★★</div>
     </div>
   </div>
-  <button class="btn" onclick="go(1)">Start de gratis check &rarr;</button>
+  <button class="btn" onclick="go(1)">Start de check &rarr;</button>
 </div>
 
 <div class="step" id="s1">
   <button class="btn-back" onclick="go(0)">&larr; terug</button>
-  <div class="eyebrow">Stap 1 van 9</div>
+  <div class="eyebrow">De Basis</div>
   <h1>Wat voor boot heb je?</h1>
-  <p class="sub">"Elk schip vraagt om een eigen unieke aanpak."</p>
+  <p class="sub">"Een goed plan begint bij de juiste fundering."</p>
   <div class="og">
-    <button class="ob" onclick="sel(this,'type','Zeilboot',2)">Zeilboot</button>
-    <button class="ob" onclick="sel(this,'type','Motorjacht',2)">Motorjacht</button>
-    <button class="ob" onclick="sel(this,'type','Sloep / tender',2)">Sloep / tender</button>
-    <button class="ob" onclick="sel(this,'type','Anders',2)">Anders</button>
+    <button class="ob" onclick="sel(this,'type','Zeilboot',2)">⛵ Zeilboot</button>
+    <button class="ob" onclick="sel(this,'type','Motorjacht',2)">🚢 Motorjacht</button>
+    <button class="ob" onclick="sel(this,'type','Sloep / tender',2)">🛥 Sloep / tender</button>
+    <button class="ob" onclick="sel(this,'type','Anders',2)">🔧 Anders</button>
   </div>
 </div>
 
 <div class="step" id="s2">
   <button class="btn-back" onclick="go(1)">&larr; terug</button>
-  <div class="eyebrow">Stap 2 van 9</div>
+  <div class="eyebrow">Afmetingen</div>
   <h1>Hoe lang is je boot?</h1>
+  <p class="sub">"Groot of klein, elk schip verdient onze volledige aandacht."</p>
   <div class="og" style="grid-template-columns:1fr">
     <button class="ob" onclick="sel(this,'lengte','Tot 8 meter',3)">Tot 8 meter</button>
     <button class="ob" onclick="sel(this,'lengte','8 tot 12 meter',3)">8 tot 12 meter</button>
@@ -101,13 +103,13 @@ input.f,textarea.f{width:100%;padding:12px;border:1px solid var(--schaduw);borde
 </div>
 
 <div class="step" id="s3">
-  <div class="eyebrow">Resultaat telt</div>
-  <h1>Schilderwerk & Romp</h1>
+  <div class="eyebrow">Expertise: Techniek</div>
+  <h1>Zorgeloos varen met nieuwe techniek</h1>
   <div class="rv-kaart">
-    <img class="rv-foto" src="https://aquaservice.nl/photos/500x333/68395a-1.jpg" alt="Schilderwerk">
+    <img class="rv-foto" src="https://aquaservice.nl/photos/500x333/68395a-1.jpg" alt="Techniek">
     <div class="rv-body">
-      <div class="rv-t">"Het schilderwerk is strakker dan toen de boot uit de fabriek kwam. De glans is na twee seizoenen nog steeds perfect."</div>
-      <div class="rv-a">Pieter de Groot — Motorjacht La Vie</div>
+      <div class="rv-t">"Bonsink heeft onze volledige elektrische installatie vernieuwd. Eindelijk geen storingen meer en alles is via de iPad te bedienen!"</div>
+      <div class="rv-a">Familie Sanders — Motorjacht Blue Horizon</div>
       <div class="rv-sterren">★★★★★</div>
     </div>
   </div>
@@ -116,8 +118,9 @@ input.f,textarea.f{width:100%;padding:12px;border:1px solid var(--schaduw);borde
 
 <div class="step" id="s4">
   <button class="btn-back" onclick="go(3)">&larr; terug</button>
-  <div class="eyebrow">Stap 3 van 9</div>
+  <div class="eyebrow">Historie</div>
   <h1>Hoe oud is je boot?</h1>
+  <p class="sub">"Klassieke lijnen met de techniek van morgen."</p>
   <div class="og">
     <button class="ob" onclick="sel(this,'age','0-5 jaar',5)">0 – 5 jaar</button>
     <button class="ob" onclick="sel(this,'age','5-10 jaar',5)">5 – 10 jaar</button>
@@ -128,37 +131,39 @@ input.f,textarea.f{width:100%;padding:12px;border:1px solid var(--schaduw);borde
 
 <div class="step" id="s5">
   <button class="btn-back" onclick="go(4)">&larr; terug</button>
-  <div class="eyebrow">Stap 4 van 9</div>
-  <h1>Wat verdient aandacht?</h1>
-  <p class="sub">Meerdere opties mogelijk.</p>
+  <div class="eyebrow">Werkzaamheden</div>
+  <h1>Wat mogen we aanpakken?</h1>
+  <p class="sub">"Van romp tot masttop: wij beheersen het volledige vakgebied."</p>
   <div class="og" style="grid-template-columns:1fr">
-    <button class="ob" onclick="tog(this,'Romp / onderwaterlak')">Romp / onderwaterlak</button>
-    <button class="ob" onclick="tog(this,'Schilderwerk')">Schilderwerk</button>
-    <button class="ob" onclick="tog(this,'Interieur')">Interieur</button>
-    <button class="ob" onclick="tog(this,'Motor / techniek')">Motor / techniek</button>
-    <button class="ob" onclick="tog(this,'Complete refit')">Complete refit</button>
+    <button class="ob" onclick="tog(this,'Schilderwerk & Romp')">🎨 Schilderwerk & Romp</button>
+    <button class="ob" onclick="tog(this,'Elektrische installatie & Navigatie')">⚡ Elektrische installatie & Navigatie</button>
+    <button class="ob" onclick="tog(this,'Motor, Boegschroef & Techniek')">⚙️ Motor, Boegschroef & Techniek</button>
+    <button class="ob" onclick="tog(this,'Interieur & Teakdek renovatie')">🛋 Interieur & Teakdek renovatie</button>
+    <button class="ob" onclick="tog(this,'Osmosebehandeling & Onderwaterlak')">🛡 Osmose & Onderwaterlak</button>
+    <button class="ob" onclick="tog(this,'Complete refit')">✨ Volledige Refit</button>
   </div>
   <button class="btn" id="btn-cond" onclick="go(6)" disabled>Volgende stap &rarr;</button>
 </div>
 
 <div class="step" id="s6">
-  <div class="eyebrow">Referentie</div>
-  <h1>Complete Refit</h1>
+  <div class="eyebrow">Expertise: Esthetiek</div>
+  <h1>Spiegelglad schilderwerk</h1>
   <div class="rv-kaart">
-    <img class="rv-foto" src="https://aquaservice.nl/photos/500x333/131b09-boot.jpg" alt="Refit">
+    <img class="rv-foto" src="https://aquaservice.nl/photos/500x333/131b09-boot.jpg" alt="Schilderwerk">
     <div class="rv-body">
-      <div class="rv-t">"Van een verouderde boot naar een modern jacht. De complete refit heeft de waarde van onze boot flink verhoogd."</div>
-      <div class="rv-a">Familie de Jong — Refit 4us2</div>
+      <div class="rv-t">"De romp ziet eruit als een spiegel. De afwerking van het schilderwerk is van ongekende kwaliteit. Mensen vragen in de haven of de boot nieuw is!"</div>
+      <div class="rv-a">Gerrit van Asselt — La Vie</div>
       <div class="rv-sterren">★★★★★</div>
     </div>
   </div>
-  <button class="btn" onclick="go(7)">Naar de laatste vragen &rarr;</button>
+  <button class="btn" onclick="go(7)">Naar de planning &rarr;</button>
 </div>
 
 <div class="step" id="s7">
   <button class="btn-back" onclick="go(6)">&larr; terug</button>
-  <div class="eyebrow">Stap 5 van 9</div>
-  <h1>Wanneer wil je het water op?</h1>
+  <div class="eyebrow">Planning</div>
+  <h1>Wanneer wil je varen?</h1>
+  <p class="sub">"De beste tijd om een boot te verbeteren is gisteren."</p>
   <div class="og">
     <button class="ob" onclick="sel(this,'timing','Zo snel mogelijk',8)">Zo snel mogelijk</button>
     <button class="ob" onclick="sel(this,'timing','Dit seizoen',8)">Dit seizoen</button>
@@ -169,7 +174,9 @@ input.f,textarea.f{width:100%;padding:12px;border:1px solid var(--schaduw);borde
 
 <div class="step" id="s8">
   <button class="btn-back" onclick="go(7)">&larr; terug</button>
-  <h1>Wat is je globale budget?</h1>
+  <div class="eyebrow">Budget</div>
+  <h1>Wat is je investeringsruimte?</h1>
+  <p class="sub">"Kwaliteit kost geld, maar loont zich altijd in vaarplezier."</p>
   <div class="og" style="grid-template-columns:1fr">
     <button class="ob" onclick="sel(this,'budget','Tot 5.000',9)">Tot 5.000 euro</button>
     <button class="ob" onclick="sel(this,'budget','5.000 - 15.000',9)">5.000 – 15.000 euro</button>
@@ -179,38 +186,44 @@ input.f,textarea.f{width:100%;padding:12px;border:1px solid var(--schaduw);borde
 
 <div class="step" id="s9">
   <button class="btn-back" onclick="go(8)">&larr; terug</button>
-  <h1>Waar droom je van voor je boot?</h1>
-  <textarea class="f" id="dream" style="height:120px" placeholder="Bijv: een stillere motor, nieuwe kleur op de romp..."></textarea>
-  <button class="btn" onclick="go(10)">Volgende &rarr;</button>
+  <div class="eyebrow">Droom</div>
+  <h1>Wat is je droom voor je boot?</h1>
+  <p class="sub">"Vertel ons wat je echt belangrijk vindt."</p>
+  <textarea class="f" id="dream" style="height:120px" placeholder="Bijv: 'Ik wil mijn boot klaarstomen voor een reis naar de Middellandse Zee...'"></textarea>
+  <button class="btn" onclick="go(10)">Bijna klaar &rarr;</button>
 </div>
 
 <div class="step" id="s10">
   <button class="btn-back" onclick="go(9)">&larr; terug</button>
-  <h1>Deel een foto van je boot</h1>
-  <p class="sub">Dit helpt ons bij een betere indicatie.</p>
+  <div class="eyebrow">Beeld</div>
+  <h1>Deel een foto van de huidige staat</h1>
+  <p class="sub">"Eén beeld zegt meer dan duizend woorden."</p>
   <input type="file" id="ph-in" accept="image/*" style="display:none" onchange="handlePhoto(this)">
-  <div class="ob" onclick="document.getElementById('ph-in').click()" style="text-align:center; padding:40px; border:2px dashed var(--schaduw)">
-    Klik om een foto te kiezen
+  <div class="ob" onclick="document.getElementById('ph-in').click()" style="text-align:center; padding:40px; border:2px dashed var(--schaduw); justify-content: center;">
+    <div id="ph-label">📸 Klik om een foto te uploaden</div>
   </div>
-  <button class="btn" onclick="go(11)">Volgende &rarr;</button>
+  <button class="btn" onclick="go(11)">Contactgegevens &rarr;</button>
 </div>
 
 <div class="step" id="s11">
   <button class="btn-back" onclick="go(10)">&larr; terug</button>
-  <h1>Contactgegevens</h1>
+  <div class="eyebrow">Contact</div>
+  <h1>Hoe kunnen we je bereiken?</h1>
+  <p class="sub">"Persoonlijk contact staat bij ons voorop."</p>
   <input class="f" id="fname" placeholder="Voornaam *" oninput="chk()">
   <input class="f" id="email" type="email" placeholder="E-mailadres *" oninput="chk()">
-  <button class="btn" id="btn-sub" onclick="showResult()" disabled>Bekijk indicatie &rarr;</button>
+  <button class="btn" id="btn-sub" onclick="showResult()" disabled>Bereken indicatie &rarr;</button>
 </div>
 
 <div class="step" id="s-result">
   <h1 id="res-hl">Jouw Indicatie</h1>
   <div class="prijs-kaart">
-    <div class="prijs-getal" id="price-range">Op maat</div>
-    <p class="sub" id="price-note" style="margin-bottom:0; margin-top:10px"></p>
+    <div class="prijs-label">Indicatieve investering</div>
+    <div class="prijs-getal" id="price-range">€ 0,-</div>
+    <p class="sub" id="price-note" style="margin-bottom:0; margin-top:10px; font-style: normal;"></p>
   </div>
-  <div id="res-sum" style="background:#fff; padding:15px; border-radius:12px; font-size:14px; line-height:1.8"></div>
-  <button class="btn" onclick="location.href='https://aquaservice.nl/#contact'">Vrijblijvend adviesgesprek</button>
+  <div id="res-sum" style="background:#fff; padding:20px; border-radius:12px; font-size:14px; line-height:1.8; border:1px solid var(--schaduw)"></div>
+  <button class="btn" onclick="location.href='https://aquaservice.nl/#contact'">Vrijblijvende afspraak inplannen</button>
 </div>
 
 </div>
@@ -218,10 +231,13 @@ input.f,textarea.f{width:100%;padding:12px;border:1px solid var(--schaduw);borde
 <script>
 var st = { type:'', lengte:'', age:'', condition:[], timing:'', budget:'', dream:'', photoName:'' };
 var IDS = ['s0','s1','s2','s3','s4','s5','s6','s7','s8','s9','s10','s11','s-result'];
-var LABELS = ['Review','Type','Lengte','Referentie','Leeftijd','Aandacht','Succesverhaal','Timing','Budget','Droom','Foto','Contact','Resultaat'];
+var LABELS = ['Referentie','Basis','Maat','Techniek','Historie','Werk','Schilderwerk','Planning','Budget','Droom','Foto','Contact','Resultaat'];
 
 function go(n) {
-  IDS.forEach(id => document.getElementById(id).classList.remove('active'));
+  IDS.forEach(id => {
+    let el = document.getElementById(id);
+    if(el) el.classList.remove('active');
+  });
   document.getElementById(IDS[n]).classList.add('active');
   let pct = Math.round((n / (IDS.length-1)) * 100);
   document.getElementById('prog-fill').style.width = pct + '%';
@@ -232,38 +248,85 @@ function go(n) {
 
 function sel(btn, key, val, next) {
   st[key] = val;
-  go(next);
+  btn.closest('.og').querySelectorAll('.ob').forEach(b => b.classList.remove('sel'));
+  btn.classList.add('sel');
+  setTimeout(() => go(next), 200);
 }
 
 function tog(btn, val) {
   btn.classList.toggle('sel');
-  if(btn.classList.contains('sel')) st.condition.push(val);
-  else st.condition = st.condition.filter(v => v !== val);
+  if(btn.classList.contains('sel')) {
+    if(!st.condition.includes(val)) st.condition.push(val);
+  } else {
+    st.condition = st.condition.filter(v => v !== val);
+  }
   document.getElementById('btn-cond').disabled = (st.condition.length === 0);
 }
 
+function handlePhoto(inp) {
+  const file = inp.files[0];
+  if(!file) return;
+  st.photoName = file.name;
+  document.getElementById('ph-label').textContent = "✅ Geselecteerd: " + file.name;
+}
+
 function chk() {
-  let f = document.getElementById('fname').value;
-  let e = document.getElementById('email').value;
+  let f = document.getElementById('fname').value.trim();
+  let e = document.getElementById('email').value.trim();
   document.getElementById('btn-sub').disabled = !(f && e.includes('@'));
 }
 
+function calcPrice() {
+  let base = 0;
+  let mult = 1;
+  
+  if (st.lengte === '8 tot 12 meter') mult = 1.6;
+  if (st.lengte === '12 meter en langer') mult = 2.8;
+
+  if (st.condition.includes('Complete refit')) return ["€ 30.000 - € 85.000+", "Schatting voor een integrale aanpak van schilderwerk, techniek en interieur."];
+  
+  st.condition.forEach(c => {
+    if (c.includes('Schilderwerk')) base += 4500;
+    if (c.includes('Elektrische')) base += 3500;
+    if (c.includes('Motor')) base += 5000;
+    if (c.includes('Interieur')) base += 6000;
+    if (c.includes('Osmose')) base += 2500;
+  });
+
+  let min = Math.round((base * mult) / 500) * 500;
+  let max = Math.round((min * 1.5) / 500) * 500;
+
+  if (min === 0) return ["Prijs op aanvraag", "Maak een afspraak voor een inspectie op locatie."];
+  return ["€ " + min.toLocaleString('nl-NL') + " - € " + max.toLocaleString('nl-NL'), "Gerichte schatting op basis van jouw gekozen specialismen."];
+}
+
 function showResult() {
-  let fname = document.getElementById('fname').value;
+  let fname = document.getElementById('fname').value.trim();
+  let price = calcPrice();
   go(12);
-  document.getElementById('res-hl').textContent = "Plan voor " + fname;
-  document.getElementById('price-range').textContent = "Prijs op aanvraag";
-  document.getElementById('price-note').textContent = "We nemen contact op voor een exacte berekening.";
+
+  document.getElementById('res-hl').textContent = "Persoonlijk plan voor " + fname;
+  document.getElementById('price-range').textContent = price[0];
+  document.getElementById('price-note').textContent = price[1];
+  
   document.getElementById('res-sum').innerHTML = `
-    <b>Type:</b> ${st.type}<br>
-    <b>Lengte:</b> ${st.lengte}<br>
-    <b>Aandachtspunten:</b> ${st.condition.join(', ')}
+    <strong>Jouw Bootprofiel:</strong><br>
+    • Type: ${st.type}<br>
+    • Lengte: ${st.lengte}<br>
+    • Geselecteerde expertises: ${st.condition.join(', ')}<br>
+    • Gewenste timing: ${st.timing}
   `;
 
   fetch('https://n8n-aqs.vimdesk.io/webhook/164b60d5-48a0-4f2f-8202-4a47e4fd2bef', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(st)
+    body: JSON.stringify({
+      ...st,
+      voornaam: fname,
+      email: document.getElementById('email').value,
+      indicatie: price[0],
+      source: 'Refit Check V2'
+    })
   });
 }
 </script>
