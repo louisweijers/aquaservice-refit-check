@@ -16,7 +16,6 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',sans-serif;background:var(--grijs);color:var(--tekst);padding-bottom:40px}
 
-/* Header */
 .header{background:var(--navy);padding:20px;display:flex;align-items:center;justify-content:space-between;min-height:70px}
 .logo-text{color:#fff;font-family:'DM Serif Display',serif;font-size:22px;letter-spacing:0.5px}
 .tel{font-size:12px;color:rgba(255,255,255,0.8);text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,0.3);padding:6px 12px;border-radius:20px}
@@ -32,10 +31,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--grijs);color:var(--tekst)
 .eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rood);margin-bottom:8px}
 h1{font-family:'DM Serif Display',serif;font-size:28px;line-height:1.2;color:var(--navy);margin-bottom:12px}
 
-/* Afbeeldingen */
 .q-img{width:100%;height:220px;object-fit:cover;border-radius:var(--r);margin-bottom:15px;box-shadow:var(--schaduw)}
 
-/* Review Box */
 .rv-box{background:rgba(25, 42, 103, 0.05);padding:15px;border-radius:12px;margin-bottom:20px;border-left:3px solid var(--rood)}
 .rv-text{font-size:14px;font-style:italic;color:var(--mu);line-height:1.5}
 .rv-auth{font-size:12px;font-weight:700;margin-top:8px;color:var(--navy);display:block}
@@ -50,10 +47,9 @@ h1{font-family:'DM Serif Display',serif;font-size:28px;line-height:1.2;color:var
 
 input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:var(--rs);font-size:15px;margin-bottom:15px;outline:none;font-family:inherit}
 
-/* Resultaat */
 .prijs-kaart{background:var(--wit);border:1px solid var(--schaduw);border-radius:var(--r);padding:20px;margin-bottom:15px}
 .spec-item{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--blauw-l);font-size:13px;align-items:center}
-.spec-range{font-weight:600;color:var(--navy);text-align:right;margin-left:10px}
+.spec-range{font-weight:600;color:var(--navy);text-align:right}
 .spec-totaal{display:flex;justify-content:space-between;padding:15px 0;font-weight:700;font-size:18px;color:var(--navy);border-top:2px solid var(--navy);margin-top:10px}
 .disclaimer{font-size:11px;color:var(--fa);line-height:1.5;margin-bottom:20px;padding:10px;background:#f9f9f9;border-radius:8px;border:1px solid var(--grijs)}
 
@@ -77,12 +73,12 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
 <div class="container">
 
   <div class="step active" id="s1">
-    <img class="q-img" src="https://aquaservice.nl/photos/500x333/131b09-boot.jpg" alt="Refit">
+    <img class="q-img" src="https://aquaservice.nl/photos/500x333/131b09-boot.jpg" alt="Start">
     <div class="eyebrow">REFIT CHECK</div>
     <h1>Nieuw, maar dan beter.</h1>
     <div class="rv-box">
-      <div class="rv-text">"Na de refit bij Aquaservice herkende ik mijn eigen schip niet meer terug. Werkelijk vakmanschap."</div>
-      <span class="rv-auth">Hendrik J. — Project 'Stormvogel'</span>
+      <div class="rv-text">"Na de refit bij Aquaservice herkende ik mijn eigen schip niet meer terug."</div>
+      <span class="rv-auth">Hendrik J.</span>
     </div>
     <button class="btn" onclick="go(2)">Start mijn Refit Check &rarr;</button>
   </div>
@@ -92,9 +88,6 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
     <img class="q-img" src="https://aquaservice.nl/photos/500x333/68395a-1.jpg" alt="Type">
     <div class="eyebrow">STAP 1</div>
     <h1>Wat voor boot heb je?</h1>
-    <div class="rv-box">
-      <div class="rv-text">"Onze loodsen zijn speciaal uitgerust voor zowel motorjachten als zeilschepen."</div>
-    </div>
     <div class="og">
       <button class="ob" onclick="sel(this,'type','Zeilboot',3)">⛵ Zeilboot</button>
       <button class="ob" onclick="sel(this,'type','Motorjacht',3)">🚢 Motorjacht</button>
@@ -104,14 +97,14 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
 
   <div class="step" id="s3">
     <button class="btn-back" onclick="go(2)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/500x333/b2c3d4-water.jpg" alt="Kwaliteit">
-    <div class="eyebrow">ONZE BELOFTE</div>
-    <h1>Vakmanschap & Passie</h1>
+    <img class="q-img" src="https://aquaservice.nl/photos/500x333/b2c3d4-water.jpg" alt="Review">
+    <div class="eyebrow">Kwaliteit</div>
+    <h1>Uw droom, onze zorg.</h1>
     <div class="rv-box">
-      <div class="rv-text">"Het team van Aquaservice werkt met zoveel passie. Je ziet de kwaliteit terug in elk detail van het schip."</div>
-      <span class="rv-auth">Pieter B. — Jacht 'Sundance'</span>
+      <div class="rv-text">"Vakmanschap en passie zie je terug in elk detail."</div>
+      <span class="rv-auth">Klaas B.</span>
     </div>
-    <button class="btn" onclick="go(4)">Volgende &rarr;</button>
+    <button class="btn" onclick="go(4)">Volgende stap &rarr;</button>
   </div>
 
   <div class="step" id="s4">
@@ -119,11 +112,8 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
     <img class="q-img" src="https://aquaservice.nl/photos/500x333/7d23a6-8.jpg" alt="Naam">
     <div class="eyebrow">STAP 2</div>
     <h1>Hoe heet je trotse bezit?</h1>
-    <div class="rv-box">
-      <div class="rv-text">"Elk project krijgt bij ons een persoonlijke benadering, te beginnen bij de naam op de spiegel."</div>
-    </div>
     <input class="f" id="bootname" placeholder="Naam van de boot...">
-    <button class="btn" onclick="go(5)">Volgende stap &rarr;</button>
+    <button class="btn" onclick="go(5)">Volgende &rarr;</button>
   </div>
 
   <div class="step" id="s5">
@@ -131,9 +121,6 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
     <img class="q-img" src="https://aquaservice.nl/photos/500x333/a0f1b2-12.jpg" alt="Lengte">
     <div class="eyebrow">STAP 3</div>
     <h1>Wat is de lengte?</h1>
-    <div class="rv-box">
-      <div class="rv-text">"Of het nu gaat om 7 of 15 meter, wij hebben de juiste kranen en ruimte voor uw schip."</div>
-    </div>
     <div class="og">
       <button class="ob" onclick="sel(this,'lengte','Tot 8 meter',6)">Tot 8 meter</button>
       <button class="ob" onclick="sel(this,'lengte','8 tot 12 meter',6)">8 tot 12 meter</button>
@@ -143,73 +130,52 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
 
   <div class="step" id="s6">
     <button class="btn-back" onclick="go(5)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/500x333/c4e5f6-techniek.jpg" alt="Werk">
+    <img class="q-img" src="https://aquaservice.nl/photos/500x333/c4e5f6-techniek.jpg" alt="Wensen">
     <div class="eyebrow">STAP 4</div>
     <h1>Welke wensen heb je?</h1>
-    <div class="rv-box">
-      <div class="rv-text">"De combinatie van technisch onderhoud en esthetische refit onder één dak is echt uniek."</div>
-    </div>
     <div class="og">
       <button class="ob" onclick="tog(this,'Schilderwerk Romp', 4500)">🎨 Schilderwerk Romp</button>
       <button class="ob" onclick="tog(this,'Schilderwerk Opbouw', 4800)">🖌️ Schilderwerk Opbouw</button>
       <button class="ob" onclick="tog(this,'Elektrische installatie', 3200)">⚡ Elektrische installatie</button>
-      <button class="ob" onclick="tog(this,'Motor onderhoud', 4500)">⚙️ Motor onderhoud</button>
+      <button class="ob" onclick="tog(this,'Motor onderhoud', 2500)">⚙️ Motor onderhoud</button>
       <button class="ob" onclick="tog(this,'Teakdek / Flexiteek', 6000)">🪵 Teakdek / Flexiteek</button>
-      <button class="ob" onclick="tog(this,'Boeg- of hekschroef', 3500)">🔄 Boeg- of hekschroef</button>
-      <button class="ob" onclick="tog(this,'Osmose behandeling', 2500)">🛡️ Osmose behandeling</button>
+      <button class="ob" onclick="tog(this,'Boegschroef', 3500)">🔄 Boegschroef</button>
     </div>
     <button class="btn" id="btn-cond" onclick="go(7)" disabled>Volgende stap &rarr;</button>
   </div>
 
   <div class="step" id="s7">
     <button class="btn-back" onclick="go(6)">&larr; terug</button>
+    <img class="q-img" src="https://aquaservice.nl/photos/500x333/68395a-1.jpg" alt="Upload">
     <div class="eyebrow">STAP 5</div>
-    <h1>Foto uploaden</h1>
-    <div class="rv-box">
-      <div class="rv-text">"Een foto helpt ons om de huidige staat van het schip direct goed in te schatten."</div>
-    </div>
-    <div class="ob" onclick="document.getElementById('ph-in').click()" style="justify-content:center; border:2px dashed var(--fa); padding:30px">
-      📸 Klik om een foto te kiezen
+    <h1>Foto van de boot</h1>
+    <div class="ob" onclick="document.getElementById('ph-in').click()" style="justify-content:center; border:2px dashed var(--fa)">
+      📸 Upload foto
     </div>
     <input type="file" id="ph-in" accept="image/*" style="display:none" onchange="handleFile(this)">
-    <div id="preview-container">
-      <img id="preview-img" src="">
-    </div>
+    <div id="preview-container"><img id="preview-img" src=""></div>
     <button class="btn" style="margin-top:20px" onclick="go(8)">Laatste stap &rarr;</button>
   </div>
 
   <div class="step" id="s8">
     <button class="btn-back" onclick="go(7)">&larr; terug</button>
-    <div class="eyebrow">AFRONDEN</div>
+    <img class="q-img" src="https://aquaservice.nl/photos/500x333/131b09-boot.jpg" alt="Contact">
+    <div class="eyebrow">Afronden</div>
     <h1>Je gegevens</h1>
-    <input class="f" id="fname" placeholder="Je voornaam *">
-    <input class="f" id="email" type="email" placeholder="Je e-mailadres *">
-    
-    <label class="cb-row">
-      <input type="checkbox" id="consent">
-      <span>Ik ga ermee akkoord dat Aquaservice contact met mij opneemt.</span>
-    </label>
-
-    <button class="btn" id="btn-sub" onclick="showResult()">Bekijk mijn indicatie &rarr;</button>
+    <input class="f" id="fname" placeholder="Je naam *">
+    <input class="f" id="email" type="email" placeholder="E-mailadres *">
+    <label class="cb-row"><input type="checkbox" id="consent"><span>Ik wil een prijsindicatie ontvangen.</span></label>
+    <button class="btn" onclick="showResult()">Bekijk resultaat &rarr;</button>
   </div>
 
   <div class="step" id="s-result">
-    <div class="eyebrow">KLAAR!</div>
+    <img class="q-img" src="https://aquaservice.nl/photos/500x333/b2c3d4-water.jpg" alt="Resultaat">
     <h1>Jouw Indicatie</h1>
-    
     <div class="prijs-kaart">
       <div id="spec-list"></div>
-      <div class="spec-totaal">
-        <span>Totaal indicatie</span>
-        <span id="total-price">€ 0,-</span>
-      </div>
+      <div class="spec-totaal"><span>Totaal</span><span id="total-price">€ 0,-</span></div>
     </div>
-
-    <div class="disclaimer">
-      Disclaimer: Deze indicatie is een schatting op basis van gemiddelde prijzen. De definitieve prijs kan pas worden bepaald na een fysieke inspectie. Er kunnen geen rechten aan deze berekening worden ontleend.
-    </div>
-    
-    <button class="btn" onclick="location.href='https://aquaservice.nl/#contact'">Vrijblijvend gesprek plannen</button>
+    <button class="btn" onclick="location.href='https://aquaservice.nl/#contact'">Maak afspraak</button>
   </div>
 
 </div>
@@ -221,10 +187,8 @@ var steps = ['s1','s2','s3','s4','s5','s6','s7','s8','s-result'];
 function go(n) {
   steps.forEach((id, i) => {
     document.getElementById(id).style.display = (i + 1 === n) ? 'block' : 'none';
-    if(i+1 === n) document.getElementById(id).classList.add('active');
   });
-  let pct = (n / steps.length) * 100;
-  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-fill').style.width = (n / steps.length) * 100 + '%';
   window.scrollTo(0,0);
 }
 
@@ -232,69 +196,43 @@ function sel(btn, key, val, next) {
   st[key] = val;
   btn.closest('.og').querySelectorAll('.ob').forEach(b => b.classList.remove('sel'));
   btn.classList.add('sel');
-  setTimeout(() => go(next), 250);
+  setTimeout(() => go(next), 200);
 }
 
 function tog(btn, name, price) {
   btn.classList.toggle('sel');
-  if(btn.classList.contains('sel')) {
-    st.selectedItems.push({name: name, price: price});
-  } else {
-    st.selectedItems = st.selectedItems.filter(i => i.name !== name);
-  }
+  if(btn.classList.contains('sel')) st.selectedItems.push({name: name, price: price});
+  else st.selectedItems = st.selectedItems.filter(i => i.name !== name);
   document.getElementById('btn-cond').disabled = (st.selectedItems.length === 0);
 }
 
 function handleFile(inp) {
-  const file = inp.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = e => {
-      st.photoData = e.target.result; 
-      document.getElementById('preview-container').style.display = 'block';
-      document.getElementById('preview-img').src = e.target.result;
-    };
-    reader.readAsDataURL(file);
-  }
+  const reader = new FileReader();
+  reader.onload = e => {
+    st.photoData = e.target.result;
+    document.getElementById('preview-container').style.display = 'block';
+    document.getElementById('preview-img').src = e.target.result;
+  };
+  reader.readAsDataURL(inp.files[0]);
 }
 
 function showResult() {
-  if(!document.getElementById('consent').checked) {
-    alert("Vink s.v.p. het akkoord aan.");
-    return;
-  }
-
+  if(!document.getElementById('consent').checked) return alert("Ga akkoord.");
   let mult = st.lengte === '8 tot 12 meter' ? 1.75 : (st.lengte === '12 meter+' ? 2.9 : 1);
-  let totalMin = 0;
-  let totalMax = 0;
-  let html = "";
-
-  st.selectedItems.forEach(item => {
-    let base = item.price * mult;
-    let pMin = Math.round(base / 100) * 100;
-    let pMax = Math.round((base * 1.35) / 100) * 100;
-    totalMin += pMin;
-    totalMax += pMax;
-    html += `<div class="spec-item"><span>${item.name}</span><span class="spec-range">€ ${pMin.toLocaleString('nl-NL')}</span></div>`;
+  let total = 0, html = "";
+  st.selectedItems.forEach(i => {
+    let p = Math.round((i.price * mult) / 10) * 10;
+    total += p;
+    html += `<div class="spec-item"><span>${i.name}</span><span class="spec-range">€ ${p.toLocaleString('nl-NL')}</span></div>`;
   });
-
   go(9);
   document.getElementById('spec-list').innerHTML = html;
-  document.getElementById('total-price').textContent = `€ ${totalMin.toLocaleString('nl-NL')} - € ${totalMax.toLocaleString('nl-NL')}`;
-
+  document.getElementById('total-price').textContent = `€ ${total.toLocaleString('nl-NL')},-`;
+  
   fetch('https://n8n-aqs.vimdesk.io/webhook/164b60d5-48a0-4f2f-8202-4a47e4fd2bef', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({
-      voornaam: document.getElementById('fname').value,
-      email: document.getElementById('email').value,
-      boot_naam: document.getElementById('bootname').value,
-      boot_type: st.type,
-      boot_lengte: st.lengte,
-      werkzaamheden: st.selectedItems.map(i => i.name).join(', '),
-      indicatie_range: `€ ${totalMin} - € ${totalMax}`,
-      foto_base64: st.photoData
-    })
+    body: JSON.stringify({...st, voornaam: document.getElementById('fname').value, email: document.getElementById('email').value})
   });
 }
 </script>
