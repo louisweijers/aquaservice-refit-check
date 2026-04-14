@@ -8,7 +8,8 @@
 <style>
 :root{
   --rood:#df1812;--rood-d:#b01a0a;--rood-l:#fde8e8;
-  --navy:#192a67;--blauw:#3d457e;--blauw-l:#eef0f8;
+  --navy:#192a67; /* Matcht met de logo achtergrond */
+  --blauw:#3d457e;--blauw-l:#eef0f8;
   --grijs:#e6e7e6;--wit:#ffffff;--tekst:#192a67;--mu:#3d457e;--fa:#8a90b0;
   --schaduw:rgba(0,0,0,0.10);--schaduw-h:rgba(0,0,0,0.18);
   --r:16px;--rs:8px;
@@ -16,43 +17,45 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',sans-serif;background:var(--grijs);color:var(--tekst);min-height:100vh}
 
-/* Verbeterde Header & Logo sectie */
-.header{background:var(--navy);padding:8px 20px;display:flex;align-items:center;justify-content:space-between;min-height:70px}
-.logo-wrap{display:flex;align-items:center;height:100%}
-.logo-img{height:54px;width:auto;display:block;object-fit:contain}
-.tel{font-size:13px;color:#fff;text-decoration:none;font-weight:600;background:rgba(255,255,255,0.1);padding:8px 12px;border-radius:20px}
+/* Header & Logo Fix */
+.header{background:var(--navy);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;min-height:80px}
+.logo-wrap{height:60px;display:flex;align-items:center}
+.logo-img{height:100%;width:auto;display:block;object-fit:contain}
+.tel{font-size:13px;color:#fff;text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,0.3);padding:8px 14px;border-radius:20px}
 
-.prog-wrap{background:var(--navy);padding:0 20px 15px}
-.prog-meta{display:flex;justify-content:space-between;padding:8px 0;font-size:11px;color:#9ba8d4;text-transform:uppercase;letter-spacing:0.05em}
+.prog-wrap{background:var(--navy);padding:0 20px 20px}
 .prog-track{height:4px;background:rgba(255,255,255,0.15);border-radius:4px}
 .prog-fill{height:4px;background:var(--rood);border-radius:4px;transition:width .5s ease;width:0%}
 
-.container{max-width:540px;margin:0 auto;padding:25px 16px 80px}
+.container{max-width:540px;margin:0 auto;padding:30px 16px 80px}
 .step{display:none}.step.active{display:block;animation:rise .4s ease-out}
 @keyframes rise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
 
 .eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rood);margin-bottom:8px}
-h1{font-family:'DM Serif Display',serif;font-size:28px;line-height:1.2;color:var(--navy);margin-bottom:10px}
-.sub{font-size:15px;color:var(--mu);margin-bottom:20px;line-height:1.6;font-style:italic}
+h1{font-family:'DM Serif Display',serif;font-size:26px;line-height:1.2;color:var(--navy);margin-bottom:10px}
+.sub{font-size:15px;color:var(--mu);margin-bottom:20px;line-height:1.6}
 
-/* Foto's bij elke vraag */
 .q-img{width:100%;height:200px;object-fit:cover;border-radius:var(--r);margin-bottom:20px;box-shadow:var(--schaduw)}
 
 .og{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
 .ob{background:var(--wit);border:1px solid var(--schaduw);border-radius:var(--r);padding:16px;cursor:pointer;text-align:left;color:var(--tekst);transition:all .2s;font-size:14px;font-weight:500;display:flex;align-items:center}
-.ob:hover{border-color:var(--rood);transform:translateY(-2px);box-shadow:var(--schaduw-h)}
 .ob.sel{border:2px solid var(--rood);background:var(--rood-l);color:var(--rood-d)}
 
 .btn{background:var(--rood);color:#fff;border:none;border-radius:var(--rs);padding:18px;font-size:16px;font-weight:600;cursor:pointer;width:100%;transition:background .2s}
-.btn:hover{background:var(--rood-d)}
 .btn:disabled{background:#ccd1d9;cursor:not-allowed}
-.btn-back{background:none;border:none;font-size:13px;color:var(--fa);cursor:pointer;margin-bottom:15px;display:flex;align-items:center;gap:5px}
+.btn-back{background:none;border:none;font-size:13px;color:var(--fa);cursor:pointer;margin-bottom:15px}
 
-input.f,textarea.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:var(--rs);font-size:15px;margin-bottom:15px;outline:none}
-input.f:focus{border-color:var(--rood)}
+input.f,textarea.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:var(--rs);font-size:15px;margin-bottom:15px;outline:none;font-family:inherit}
 
-.prijs-kaart{background:var(--wit);border:1px solid var(--schaduw);border-radius:var(--r);padding:30px;margin-bottom:20px;text-align:center;border-top:4px solid var(--rood)}
-.prijs-getal{font-family:'DM Serif Display',serif;font-size:36px;color:var(--navy);margin:10px 0}
+/* Prijs Specificatie */
+.prijs-kaart{background:var(--wit);border:1px solid var(--schaduw);border-radius:var(--r);padding:25px;margin-bottom:20px}
+.spec-item{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--blauw-l);font-size:14px}
+.spec-totaal{display:flex;justify-content:space-between;padding:15px 0;font-weight:700;font-size:18px;color:var(--navy);border-top:2px solid var(--navy);margin-top:10px}
+
+.cb-row{display:flex;gap:10px;margin-bottom:20px;align-items:flex-start;cursor:pointer;font-size:13px;line-height:1.5;color:var(--mu)}
+
+#preview-container{margin-top:15px;display:none;text-align:center}
+#preview-img{max-width:100%;border-radius:8px;max-height:150px}
 </style>
 </head>
 <body>
@@ -61,36 +64,19 @@ input.f:focus{border-color:var(--rood)}
   <div class="logo-wrap">
     <img src="Bonsink Aquaservice-logo-blauwe achtergrond-liggen.png" alt="Bonsink Aquaservice" class="logo-img">
   </div>
-  <a class="tel" href="tel:+31850239550">📞 085 023 95 50</a>
+  <a class="tel" href="tel:+31850239550">085 023 95 50</a>
 </div>
 
 <div class="prog-wrap">
-  <div class="prog-meta"><span id="sc-label">Start</span><span id="sc-pct">0%</span></div>
   <div class="prog-track"><div class="prog-fill" id="prog-fill"></div></div>
 </div>
 
 <div class="container">
 
-<div class="step active" id="s0">
-  <div class="eyebrow">Referentie</div>
-  <h1>"Als nieuw, maar dan beter."</h1>
-  <div class="rv-kaart" style="margin-top:15px">
-    <img class="rv-foto" src="https://aquaservice.nl/photos/500x333/131b09-boot.jpg" alt="Refit project">
-    <div class="rv-body">
-      <div class="rv-t">"De passie voor techniek spat ervan af. Onze boot is technisch weer in topstaat en het schilderwerk is werkelijk spiegelglad."</div>
-      <div class="rv-a">Jan de Vries — Project 'De Vrijheid'</div>
-      <div class="rv-sterren">★★★★★</div>
-    </div>
-  </div>
-  <button class="btn" onclick="go(1)">Start mijn Refit Check &rarr;</button>
-</div>
-
-<div class="step" id="s1">
-  <button class="btn-back" onclick="go(0)">&larr; terug</button>
-  <img class="q-img" src="https://aquaservice.nl/photos/500x333/68395a-1.jpg" alt="Type boot">
-  <div class="eyebrow">De Basis</div>
+<div class="step active" id="s1">
+  <img class="q-img" src="https://aquaservice.nl/photos/500x333/68395a-1.jpg" alt="Boot">
+  <div class="eyebrow">Stap 1</div>
   <h1>Wat voor boot heb je?</h1>
-  <p class="sub">"Elk schip vraagt om een eigen, unieke aanpak."</p>
   <div class="og">
     <button class="ob" onclick="sel(this,'type','Zeilboot',2)">⛵ Zeilboot</button>
     <button class="ob" onclick="sel(this,'type','Motorjacht',2)">🚢 Motorjacht</button>
@@ -101,109 +87,94 @@ input.f:focus{border-color:var(--rood)}
 
 <div class="step" id="s2">
   <button class="btn-back" onclick="go(1)">&larr; terug</button>
-  <img class="q-img" src="https://aquaservice.nl/photos/500x333/7d23a6-8.jpg" alt="Naam boot">
-  <div class="eyebrow">Persoonlijk</div>
-  <h1>Hoe heet je schip?</h1>
-  <p class="sub">"Een naam geeft een boot haar eigen karakter." (Optioneel)</p>
-  <input class="f" id="bootname" placeholder="Bijv. 'De Blauwe Walvis'...">
-  <button class="btn" onclick="go(3)">Volgende stap &rarr;</button>
+  <img class="q-img" src="https://aquaservice.nl/photos/500x333/a0f1b2-12.jpg" alt="Lengte">
+  <div class="eyebrow">Stap 2</div>
+  <h1>Wat is de lengte?</h1>
+  <div class="og" style="grid-template-columns:1fr">
+    <button class="ob" onclick="sel(this,'lengte','Tot 8 meter',3)">Tot 8 meter</button>
+    <button class="ob" onclick="sel(this,'lengte','8 tot 12 meter',3)">8 tot 12 meter</button>
+    <button class="ob" onclick="sel(this,'lengte','12 meter en langer',3)">12 meter en langer</button>
+  </div>
 </div>
 
 <div class="step" id="s3">
   <button class="btn-back" onclick="go(2)">&larr; terug</button>
-  <img class="q-img" src="https://aquaservice.nl/photos/500x333/a0f1b2-12.jpg" alt="Lengte">
-  <div class="eyebrow">Afmetingen</div>
-  <h1>Wat is de lengte?</h1>
-  <p class="sub">"Van compacte sloep tot royaal jacht, wij hebben de faciliteiten."</p>
+  <div class="eyebrow">Stap 3</div>
+  <h1>Wat mogen we aanpakken?</h1>
+  <p class="sub">Selecteer de onderdelen voor jouw indicatie.</p>
   <div class="og" style="grid-template-columns:1fr">
-    <button class="ob" onclick="sel(this,'lengte','Tot 8 meter',4)">Tot 8 meter</button>
-    <button class="ob" onclick="sel(this,'lengte','8 tot 12 meter',4)">8 tot 12 meter</button>
-    <button class="ob" onclick="sel(this,'lengte','12 meter en langer',4)">12 meter en langer</button>
+    <button class="ob" onclick="tog(this,'Schilderwerk Romp', 4200)">🎨 Schilderwerk Romp</button>
+    <button class="ob" onclick="tog(this,'Schilderwerk Opbouw', 4800)">🖌️ Schilderwerk Opbouw</button>
+    <button class="ob" onclick="tog(this,'Elektrische installatie', 3200)">⚡ Elektrische installatie</button>
+    <button class="ob" onclick="tog(this,'Motor onderhoud', 2500)">⚙️ Motor onderhoud</button>
+    <button class="ob" onclick="tog(this,'Boegschroef inbouw', 3800)">🔄 Boegschroef inbouw</button>
+    <button class="ob" onclick="tog(this,'Interieur renovatie', 5000)">🛋️ Interieur renovatie</button>
+    <button class="ob" onclick="tog(this,'Nieuw Teakdek / Flexiteek', 7000)">🪵 Teakdek / Flexiteek</button>
+    <button class="ob" onclick="tog(this,'Onderwaterschip / Osmose', 2800)">⚓ Onderwaterschip / Osmose</button>
   </div>
+  <button class="btn" id="btn-cond" onclick="go(4)" disabled>Volgende stap &rarr;</button>
 </div>
 
 <div class="step" id="s4">
   <button class="btn-back" onclick="go(3)">&larr; terug</button>
-  <img class="q-img" src="https://aquaservice.nl/photos/500x333/c4e5f6-techniek.jpg" alt="Onderhoud">
-  <div class="eyebrow">Werkzaamheden</div>
-  <h1>Wat mogen we aanpakken?</h1>
-  <p class="sub">"Kies de onderdelen die verbetering nodig hebben."</p>
-  <div class="og" style="grid-template-columns:1fr">
-    <button class="ob" onclick="tog(this,'Schilderwerk Romp')">🎨 Schilderwerk Romp</button>
-    <button class="ob" onclick="tog(this,'Schilderwerk Opbouw')">🖌️ Schilderwerk Opbouw</button>
-    <button class="ob" onclick="tog(this,'Elektrische installatie')">⚡ Elektrische installatie</button>
-    <button class="ob" onclick="tog(this,'Navigatie & Electronica')">🛰️ Navigatie & Electronica</button>
-    <button class="ob" onclick="tog(this,'Motor onderhoud/vervanging')">⚙️ Motor onderhoud / vervanging</button>
-    <button class="ob" onclick="tog(this,'Boeg- of hekschroef')">🔄 Boeg- of hekschroef</button>
-    <button class="ob" onclick="tog(this,'Interieur / Stoffering')">🛋️ Interieur renovatie</button>
-    <button class="ob" onclick="tog(this,'Teakdek renovatie')">🪵 Teakdek renovatie / Flexiteek</button>
-    <button class="ob" onclick="tog(this,'Osmose behandeling')">🛡️ Osmose behandeling</button>
-    <button class="ob" onclick="tog(this,'Onderwaterschip / Antifouling')">⚓ Onderwaterschip / Antifouling</button>
-    <button class="ob" onclick="tog(this,'RVS werk / Beslag')">🛠️ RVS werk / Beslag</button>
-    <button class="ob" onclick="tog(this,'Volledige Refit')">✨ Volledige Refit</button>
+  <img class="q-img" src="https://aquaservice.nl/photos/500x333/7d23a6-8.jpg" alt="Foto">
+  <div class="eyebrow">Stap 4</div>
+  <h1>Heb je een foto?</h1>
+  <p class="sub">Dit helpt ons bij het beoordelen van de huidige staat.</p>
+  <div class="ob" onclick="document.getElementById('ph-in').click()" style="justify-content:center; border:2px dashed var(--fa); height:120px">
+    📸 Klik om foto te uploaden
   </div>
-  <button class="btn" id="btn-cond" onclick="go(5)" disabled>Volgende stap &rarr;</button>
+  <input type="file" id="ph-in" accept="image/*" style="display:none" onchange="handleFile(this)">
+  <div id="preview-container">
+    <img id="preview-img" src="">
+    <p style="font-size:12px; color:var(--rood); margin-top:5px">Foto toegevoegd!</p>
+  </div>
+  <button class="btn" style="margin-top:20px" onclick="go(5)">Volgende &rarr;</button>
 </div>
 
 <div class="step" id="s5">
   <button class="btn-back" onclick="go(4)">&larr; terug</button>
-  <img class="q-img" src="https://aquaservice.nl/photos/500x333/b2c3d4-water.jpg" alt="Planning">
-  <div class="eyebrow">Planning</div>
-  <h1>Wanneer wil je varen?</h1>
-  <p class="sub">"De beste tijd om te starten is nu, zodat je straks zorgeloos het water op kunt."</p>
-  <div class="og">
-    <button class="ob" onclick="sel(this,'timing','Zo snel mogelijk',6)">Zo snel mogelijk</button>
-    <button class="ob" onclick="sel(this,'timing','Voor het seizoen',6)">Voor het seizoen</button>
-    <button class="ob" onclick="sel(this,'timing','Komende winter',6)">Komende winter</button>
-    <button class="ob" onclick="sel(this,'timing','Oriënterend',6)">Oriënterend</button>
-  </div>
-</div>
-
-<div class="step" id="s6">
-  <button class="btn-back" onclick="go(5)">&larr; terug</button>
-  <img class="q-img" src="https://aquaservice.nl/photos/500x333/131b09-boot.jpg" alt="Investering">
-  <div class="eyebrow">Budget</div>
-  <h1>Investeringsruimte?</h1>
-  <p class="sub">"Kwaliteit loont zich altijd in vaarplezier en waardebehoud."</p>
-  <div class="og" style="grid-template-columns:1fr">
-    <button class="ob" onclick="sel(this,'budget','Tot €5.000',7)">Tot €5.000,-</button>
-    <button class="ob" onclick="sel(this,'budget','€5.000 - €20.000',7)">€5.000,- tot €20.000,-</button>
-    <button class="ob" onclick="sel(this,'budget','€20.000+',7)">Meer dan €20.000,-</button>
-  </div>
-</div>
-
-<div class="step" id="s7">
-  <button class="btn-back" onclick="go(6)">&larr; terug</button>
-  <div class="eyebrow">Laatste stap</div>
-  <h1>Ontvang je indicatie</h1>
-  <p class="sub">"We sturen je direct een inschatting van de mogelijkheden."</p>
-  <input class="f" id="fname" placeholder="Voornaam *">
+  <div class="eyebrow">Stap 5</div>
+  <h1>Bijna klaar</h1>
+  <input class="f" id="fname" placeholder="Naam *">
   <input class="f" id="email" type="email" placeholder="E-mailadres *">
-  <button class="btn" id="btn-sub" onclick="showResult()">Bereken mijn indicatie &rarr;</button>
+  <input class="f" id="bootname" placeholder="Naam boot (optioneel)">
+  
+  <label class="cb-row">
+    <input type="checkbox" id="consent">
+    <span>Ik ga akkoord dat Bonsink Aquaservice contact met mij opneemt over deze aanvraag.</span>
+  </label>
+
+  <button class="btn" id="btn-sub" onclick="showResult()">Bekijk indicatie &rarr;</button>
 </div>
 
 <div class="step" id="s-result">
-  <h1 id="res-hl">Jouw Resultaat</h1>
+  <div class="eyebrow">Jouw aanvraag</div>
+  <h1 id="res-hl">Indicatie overzicht</h1>
+  
   <div class="prijs-kaart">
-    <div class="prijs-getal" id="price-range">€ 0,-</div>
-    <p class="sub" id="price-note" style="margin-top:10px"></p>
+    <div id="spec-list"></div>
+    <div class="spec-totaal">
+      <span>Totaal indicatie</span>
+      <span id="total-price">€ 0,-</span>
+    </div>
   </div>
-  <div id="res-sum" style="background:#fff; padding:20px; border-radius:12px; font-size:14px; line-height:1.8; border:1px solid var(--schaduw)"></div>
-  <button class="btn" onclick="location.href='https://aquaservice.nl/#contact'">Vrijblijvende afspraak inplannen</button>
+  
+  <button class="btn" onclick="location.href='https://aquaservice.nl/#contact'">Vrijblijvende afspraak plannen</button>
 </div>
 
 </div>
 
 <script>
-var st = { type:'', bootname:'', lengte:'', condition:[], timing:'', budget:'' };
-var IDS = ['s0','s1','s2','s3','s4','s5','s6','s7','s-result'];
+var st = { type:'', bootname:'', lengte:'', prices:[] };
+var IDS = ['s1','s2','s3','s4','s5','s-result'];
 
 function go(n) {
-  IDS.forEach(id => document.getElementById(id).classList.remove('active'));
-  document.getElementById(IDS[n]).classList.add('active');
-  let pct = Math.round((n / (IDS.length-1)) * 100);
+  IDS.forEach((id, i) => {
+    document.getElementById(id).classList.toggle('active', (i + 1) === n);
+  });
+  let pct = (n / IDS.length) * 100;
   document.getElementById('prog-fill').style.width = pct + '%';
-  document.getElementById('sc-pct').textContent = pct + '%';
   window.scrollTo(0,0);
 }
 
@@ -211,66 +182,56 @@ function sel(btn, key, val, next) {
   st[key] = val;
   btn.closest('.og').querySelectorAll('.ob').forEach(b => b.classList.remove('sel'));
   btn.classList.add('sel');
-  setTimeout(() => go(next), 250);
+  setTimeout(() => go(next), 200);
 }
 
-function tog(btn, val) {
+function tog(btn, val, price) {
   btn.classList.toggle('sel');
   if(btn.classList.contains('sel')) {
-    if(!st.condition.includes(val)) st.condition.push(val);
+    st.prices.push({name: val, price: price});
   } else {
-    st.condition = st.condition.filter(v => v !== val);
+    st.prices = st.prices.filter(p => p.name !== val);
   }
-  document.getElementById('btn-cond').disabled = (st.condition.length === 0);
+  document.getElementById('btn-cond').disabled = (st.prices.length === 0);
 }
 
-function calcPrice() {
-  let base = 0;
-  let mult = st.lengte === '8 tot 12 meter' ? 1.8 : (st.lengte === '12 meter en langer' ? 3.0 : 1);
-
-  if(st.condition.includes('Volledige Refit')) return ["€ 35.000 - € 95.000+", "Indicatie voor een totale metamorfose van techniek, exterieur en comfort."];
-
-  st.condition.forEach(c => {
-    if(c.includes('Schilderwerk')) base += 4500;
-    if(c.includes('Elektrische')) base += 3500;
-    if(c.includes('Navigatie')) base += 3000;
-    if(c.includes('Motor')) base += 5000;
-    if(c.includes('Boeg-')) base += 3800;
-    if(c.includes('Interieur')) base += 5500;
-    if(c.includes('Teakdek')) base += 6500;
-    if(c.includes('Osmose')) base += 3000;
-    if(c.includes('Onderwaterschip')) base += 1500;
-    if(c.includes('RVS')) base += 2000;
-  });
-
-  let min = Math.round((base * mult) / 500) * 500;
-  let max = Math.round((min * 1.45) / 500) * 500;
-  
-  if(min === 0) return ["Op aanvraag", "Neem contact op voor een maatwerk offerte."];
-  return ["€ " + min.toLocaleString('nl-NL') + " - € " + max.toLocaleString('nl-NL'), "Schatting op basis van jouw selectie en bootlengte."];
+function handleFile(inp) {
+  const file = inp.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      document.getElementById('preview-container').style.display = 'block';
+      document.getElementById('preview-img').src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
 }
 
 function showResult() {
-  let fname = document.getElementById('fname').value;
-  let bname = document.getElementById('bootname').value;
-  let price = calcPrice();
-  go(8);
+  if(!document.getElementById('consent').checked) {
+    alert("Vink het akkoord aan om door te gaan.");
+    return;
+  }
 
-  document.getElementById('res-hl').textContent = "Refit Plan: " + (bname ? bname : fname);
-  document.getElementById('price-range').textContent = price[0];
-  document.getElementById('price-note').textContent = price[1];
+  let mult = st.lengte === '8 tot 12 meter' ? 1.6 : (st.lengte === '12 meter en langer' ? 2.8 : 1);
+  let totalMin = 0;
+  let html = "";
+
+  st.prices.forEach(item => {
+    let p = Math.round((item.price * mult) / 100) * 100;
+    totalMin += p;
+    html += `<div class="spec-item"><span>${item.name}</span><span>€ ${p.toLocaleString('nl-NL')}</span></div>`;
+  });
+
+  go(6);
+  document.getElementById('spec-list').innerHTML = html;
+  document.getElementById('total-price').textContent = `€ ${totalMin.toLocaleString('nl-NL')} - € ${(Math.round(totalMin*1.4/100)*100).toLocaleString('nl-NL')}`;
   
-  document.getElementById('res-sum').innerHTML = `
-    <strong>Jouw specificaties:</strong><br>
-    • Type: ${st.type}<br>
-    • Werkzaamheden: ${st.condition.join(', ')}<br>
-    • Gewenste start: ${st.timing}
-  `;
-
+  // Lead naar Webhook
   fetch('https://n8n-aqs.vimdesk.io/webhook/164b60d5-48a0-4f2f-8202-4a47e4fd2bef', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({...st, voornaam: fname, bootnaam: bname, indicatie: price[0]})
+    body: JSON.stringify({...st, voornaam: document.getElementById('fname').value, indicatie: totalMin})
   });
 }
 </script>
