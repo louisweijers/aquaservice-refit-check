@@ -100,16 +100,31 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
   <div class="step" id="s4">
     <button class="btn-back" onclick="go(3)">&larr; terug</button>
     <img class="q-img" src="https://aquaservice.nl/photos/popup/085e78-1.jpg">
-    <h1>Wat is de lengte?</h1>
+    <h1>Hoe oud is de boot?</h1>
     <div class="og">
-      <button class="ob" onclick="sel(this,'lengte','Tot 8 meter',5)">Tot 8 meter</button>
-      <button class="ob" onclick="sel(this,'lengte','8 tot 12 meter',5)">8 tot 12 meter</button>
-      <button class="ob" onclick="sel(this,'lengte','12 meter+',5)">12 meter en langer</button>
+      <button class="ob" onclick="sel(this,'bouwjaar_indicatie','Nieuwer dan 10 jaar',5)">✨ Jonger dan 10 jaar</button>
+      <button class="ob" onclick="sel(this,'bouwjaar_indicatie','Tussen 10 en 25 jaar',5)">⚓ Tussen 10 en 25 jaar</button>
+      <button class="ob" onclick="sel(this,'bouwjaar_indicatie','Ouder dan 25 jaar',5)">🏛️ Klassieker (25+ jaar)</button>
+    </div>
+    <div class="rv-box">
+      <div class="rv-text">"Ze weten precies wat een schip van deze leeftijd nodig heeft om weer jaren mee te gaan."</div>
+      <span class="rv-auth">Jan-Willem T.</span>
     </div>
   </div>
 
   <div class="step" id="s5">
     <button class="btn-back" onclick="go(4)">&larr; terug</button>
+    <img class="q-img" src="https://aquaservice.nl/photos/popup/131b09-boot.jpg">
+    <h1>Wat is de lengte?</h1>
+    <div class="og">
+      <button class="ob" onclick="sel(this,'lengte','Tot 8 meter',6)">Tot 8 meter</button>
+      <button class="ob" onclick="sel(this,'lengte','8 tot 12 meter',6)">8 tot 12 meter</button>
+      <button class="ob" onclick="sel(this,'lengte','12 meter+',6)">12 meter en langer</button>
+    </div>
+  </div>
+
+  <div class="step" id="s6">
+    <button class="btn-back" onclick="go(5)">&larr; terug</button>
     <img class="q-img" src="https://aquaservice.nl/photos/popup/87644b-img-5507.jpg">
     <h1>Kies de werkzaamheden:</h1>
     <div class="og">
@@ -123,25 +138,21 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
       <button class="ob" onclick="tog(this,'Sanitair & Drinkwater', 2800)">🚿 Sanitair & Drinkwater</button>
       <button class="ob" onclick="tog(this,'Navigatie & Apparatuur', 3800)">🛰️ Navigatie & Apparatuur</button>
     </div>
-    <button class="btn" id="btn-cond" onclick="go(6)" disabled>Volgende stap &rarr;</button>
+    <button class="btn" id="btn-cond" onclick="go(7)" disabled>Volgende stap &rarr;</button>
   </div>
 
-  <div class="step" id="s6">
-    <button class="btn-back" onclick="go(5)">&larr; terug</button>
+  <div class="step" id="s7">
+    <button class="btn-back" onclick="go(6)">&larr; terug</button>
     <img class="q-img" src="https://aquaservice.nl/photos/popup/68395a-1.jpg">
     <h1>Foto van de boot</h1>
     <div class="ob" onclick="document.getElementById('ph-in').click()" style="justify-content:center; border:2px dashed var(--fa)">📸 Foto uploaden (optioneel)</div>
     <input type="file" id="ph-in" accept="image/*" style="display:none" onchange="handleFile(this)">
     <div id="preview-container"><img id="preview-img" src=""></div>
-    <div class="rv-box" style="margin-top:20px">
-      <div class="rv-text">"Eerlijk advies en geen verrassingen achteraf. Zoals het hoort."</div>
-      <span class="rv-auth">Pieter van D.</span>
-    </div>
-    <button class="btn" style="margin-top:20px" onclick="go(7)">Naar gegevens &rarr;</button>
+    <button class="btn" style="margin-top:20px" onclick="go(8)">Naar gegevens &rarr;</button>
   </div>
 
-  <div class="step" id="s7">
-    <button class="btn-back" onclick="go(6)">&larr; terug</button>
+  <div class="step" id="s8">
+    <button class="btn-back" onclick="go(7)">&larr; terug</button>
     <img class="q-img" src="https://aquaservice.nl/photos/popup/131b09-boot.jpg">
     <h1>Uw gegevens</h1>
     <input class="f" id="fname" placeholder="Uw naam *">
@@ -164,8 +175,9 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
 var st = { 
   type:'', 
   bootname:'', 
+  bouwjaar_indicatie:'',
   lengte:'', 
-  selectedItems:[], // Hier komen de namen + de berekende ranges in
+  selectedItems:[], 
   photoData: null, 
   voornaam:'', 
   email:'', 
@@ -173,7 +185,7 @@ var st = {
   totaal_indicatie:'', 
   contact_verzoek:'NEE' 
 };
-var steps = ['s1','s2','s3','s4','s5','s6','s7','s-result'];
+var steps = ['s1','s2','s3','s4','s5','s6','s7','s8','s-result'];
 const WEBHOOK_URL = 'https://n8n-aqs.vimdesk.io/webhook/164b60d5-48a0-4f2f-8202-4a47e4fd2bef';
 
 function go(n) {
@@ -219,20 +231,16 @@ function showResult() {
   let mult = st.lengte === '8 tot 12 meter' ? 1.75 : (st.lengte === '12 meter+' ? 2.9 : 1);
   let totalMin = 0, totalMax = 0, html = "";
   
-  // We berekenen de definitieve items voor de webhook en weergave
   st.selectedItems.forEach(i => {
     let pMin = Math.round((i.basePrice * mult) / 100) * 100;
     let pMax = Math.round(((i.basePrice * mult) * 1.35) / 100) * 100;
-    
-    // Voeg de range toe aan het object voor de webhook
     i.prijs_indicatie = `€ ${pMin.toLocaleString('nl-NL')} - € ${pMax.toLocaleString('nl-NL')}`;
-    
     totalMin += pMin; totalMax += pMax;
     html += `<div class="spec-item"><span>${i.name}</span><span class="spec-range">${i.prijs_indicatie}</span></div>`;
   });
   
   st.totaal_indicatie = `€ ${totalMin.toLocaleString('nl-NL')} - € ${totalMax.toLocaleString('nl-NL')}`;
-  go(8);
+  go(9);
   document.getElementById('spec-list').innerHTML = html;
   document.getElementById('total-price').textContent = st.totaal_indicatie;
   sendToN8N();
