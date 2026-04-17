@@ -16,8 +16,8 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',sans-serif;background:var(--grijs);color:var(--tekst);padding-bottom:40px}
 
-.header{background:var(--navy);padding:20px;display:flex;align-items:center;justify-content:space-between;min-height:70px}
-.logo-text{color:#fff;font-family:'DM Serif Display',serif;font-size:22px;letter-spacing:0.5px}
+.header{background:var(--navy);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.logo-text{color:#fff;font-family:'DM Serif Display',serif;font-size:20px;letter-spacing:0.3px}
 
 .prog-wrap{background:var(--navy);padding:0 20px 15px}
 .prog-track{height:4px;background:rgba(255,255,255,0.15);border-radius:4px}
@@ -32,85 +32,94 @@ h1{font-family:'DM Serif Display',serif;font-size:28px;line-height:1.2;color:var
 
 .q-img{width:100%;height:240px;object-fit:cover;border-radius:var(--r);margin-bottom:15px;box-shadow:var(--schaduw)}
 
-.rv-box{background:rgba(25, 42, 103, 0.05);padding:15px;border-radius:12px;margin-bottom:20px;border-left:3px solid var(--rood)}
+.rv-box{background:rgba(25,42,103,0.05);padding:15px;border-radius:12px;margin-bottom:20px;border-left:3px solid var(--rood)}
 .rv-text{font-size:14px;font-style:italic;color:var(--mu);line-height:1.5}
 .rv-auth{font-size:12px;font-weight:700;margin-top:8px;color:var(--navy);display:block}
 
 .og{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:20px}
-.ob{background:var(--wit);border:1px solid var(--schaduw);border-radius:var(--r);padding:16px;cursor:pointer;text-align:left;color:var(--tekst);transition:all .2s;font-size:15px;font-weight:500;display:flex;align-items:center;gap:12px}
+.ob{background:var(--wit);border:1px solid var(--schaduw);border-radius:var(--r);padding:16px;cursor:pointer;text-align:left;color:var(--tekst);transition:all .2s;font-size:15px;font-weight:500;display:flex;align-items:center;gap:12px;font-family:'DM Sans',sans-serif}
 .ob.sel{border:2px solid var(--rood);background:var(--rood-l);color:var(--rood-d)}
 
-.btn{background:var(--rood);color:#fff;border:none;border-radius:var(--rs);padding:18px;font-size:16px;font-weight:600;cursor:pointer;width:100%;transition:background .2s}
+.btn{background:var(--rood);color:#fff;border:none;border-radius:var(--rs);padding:18px;font-size:16px;font-weight:600;cursor:pointer;width:100%;transition:background .2s;font-family:'DM Sans',sans-serif}
+.btn:hover{background:var(--rood-d)}
 .btn:disabled{background:#ccd1d9;cursor:not-allowed}
-.btn-back{background:none;border:none;font-size:13px;color:var(--fa);cursor:pointer;margin-bottom:15px}
+.btn-back{background:none;border:none;font-size:13px;color:var(--fa);cursor:pointer;margin-bottom:15px;font-family:'DM Sans',sans-serif}
 
-input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:var(--rs);font-size:15px;margin-bottom:10px;outline:none;font-family:inherit}
+input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:var(--rs);font-size:15px;margin-bottom:10px;outline:none;font-family:inherit;color:var(--tekst)}
+
+.foto-drop{border:2px dashed var(--fa);border-radius:var(--r);padding:28px;text-align:center;cursor:pointer;background:var(--wit);margin-bottom:12px;transition:all .2s;font-size:15px;font-weight:500;color:var(--mu)}
+.foto-drop:hover{border-color:var(--rood);background:var(--rood-l)}
+.foto-drop.has-p{padding:6px;border-color:var(--rood);background:var(--rood-l)}
+.foto-prev{width:100%;max-height:200px;object-fit:cover;border-radius:10px;display:none}
+.foto-status{font-size:12px;font-weight:600;text-align:center;margin-top:8px;color:var(--rood-d);display:none}
+.foto-uploading{font-size:12px;text-align:center;margin-top:8px;color:var(--blauw);display:none}
 
 .prijs-kaart{background:var(--wit);border:1px solid var(--schaduw);border-radius:var(--r);padding:20px;margin-bottom:15px}
 .spec-item{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--blauw-l);font-size:13px;align-items:center}
 .spec-range{font-weight:600;color:var(--navy);text-align:right}
 .spec-totaal{display:flex;justify-content:space-between;padding:15px 0;font-weight:700;font-size:18px;color:var(--navy);border-top:2px solid var(--navy);margin-top:10px}
 .disclaimer{font-size:11px;color:var(--fa);line-height:1.5;margin-bottom:20px;padding:12px;background:#f9f9f9;border-radius:8px;border:1px solid var(--grijs)}
-
-#preview-container{margin-top:15px;display:none}
-#preview-img{width:100%;border-radius:12px;max-height:180px;object-fit:cover}
-#avg-msg{display:none;background:var(--blauw-l);color:var(--navy);padding:15px;border-radius:var(--rs);font-weight:600;text-align:center;margin-top:10px}
+.bevestiging{display:none;background:var(--blauw-l);color:var(--navy);padding:15px;border-radius:var(--rs);font-weight:600;text-align:center;margin-top:10px;font-size:14px}
 </style>
 </head>
 <body>
 
-<div class="header"><div class="logo-text">Aquaservice Refit</div></div>
+<div class="header">
+  <div class="logo-text">Aquaservice Refit</div>
+  <a href="tel:+31850239550" style="font-size:12px;color:#9ba8d4;text-decoration:none">085 023 95 50</a>
+</div>
 <div class="prog-wrap"><div class="prog-track"><div class="prog-fill" id="prog-fill"></div></div></div>
 
 <div class="container">
+
   <div class="step active" id="s1">
-    <img class="q-img" src="https://aquaservice.nl/photos/popup/131b09-boot.jpg">
+    <img class="q-img" src="https://aquaservice.nl/photos/popup/131b09-boot.jpg" onerror="this.style.display='none'">
     <div class="eyebrow">REFIT CHECK</div>
     <h1>Nieuw, maar dan beter.</h1>
     <div class="rv-box">
       <div class="rv-text">"Na de refit herkende ik mijn eigen schip niet meer terug. Wat een vakmanschap!"</div>
-      <span class="rv-auth">Hendrik J.</span>
+      <span class="rv-auth">Hendrik J. &mdash; motorjacht &#9733;&#9733;&#9733;&#9733;&#9733;</span>
     </div>
     <button class="btn" onclick="go(2)">Start mijn Refit Check &rarr;</button>
   </div>
 
   <div class="step" id="s2">
     <button class="btn-back" onclick="go(1)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/popup/68395a-1.jpg">
+    <img class="q-img" src="https://aquaservice.nl/photos/popup/68395a-1.jpg" onerror="this.style.display='none'">
     <h1>Wat voor boot heeft u?</h1>
     <div class="og">
-      <button class="ob" onclick="sel(this,'type','Zeilboot',3)">⛵ Zeilboot</button>
-      <button class="ob" onclick="sel(this,'type','Motorjacht',3)">🚢 Motorjacht</button>
-      <button class="ob" onclick="sel(this,'type','Sloep / tender',3)">🛥 Sloep / tender</button>
+      <button class="ob" onclick="sel(this,'type','Zeilboot',3)">&#9973; Zeilboot</button>
+      <button class="ob" onclick="sel(this,'type','Motorjacht',3)">&#128674; Motorjacht</button>
+      <button class="ob" onclick="sel(this,'type','Sloep / tender',3)">&#128741; Sloep / tender</button>
     </div>
   </div>
 
   <div class="step" id="s3">
     <button class="btn-back" onclick="go(2)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/popup/f7fe86-1.jpg">
+    <img class="q-img" src="https://aquaservice.nl/photos/popup/f7fe86-1.jpg" onerror="this.style.display='none'">
     <h1>Hoe heet uw schip?</h1>
-    <input class="f" id="bootname" placeholder="Naam van de boot...">
+    <input class="f" id="bootname" placeholder="Naam van de boot (optioneel)">
     <div class="rv-box" style="margin-top:20px">
       <div class="rv-text">"De passie voor watersport spat er vanaf bij het team van Aquaservice."</div>
-      <span class="rv-auth">Klaas B.</span>
+      <span class="rv-auth">Klaas B. &#9733;&#9733;&#9733;&#9733;&#9733;</span>
     </div>
     <button class="btn" onclick="go(4)">Volgende &rarr;</button>
   </div>
 
   <div class="step" id="s4">
     <button class="btn-back" onclick="go(3)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/popup/085e78-1.jpg">
+    <img class="q-img" src="https://aquaservice.nl/photos/popup/085e78-1.jpg" onerror="this.style.display='none'">
     <h1>Hoe oud is de boot?</h1>
     <div class="og">
-      <button class="ob" onclick="sel(this,'bouwjaar_indicatie','Nieuwer dan 10 jaar',5)">✨ Jonger dan 10 jaar</button>
-      <button class="ob" onclick="sel(this,'bouwjaar_indicatie','Tussen 10 en 25 jaar',5)">⚓ Tussen 10 en 25 jaar</button>
-      <button class="ob" onclick="sel(this,'bouwjaar_indicatie','Ouder dan 25 jaar',5)">🏛️ Klassieker (25+ jaar)</button>
+      <button class="ob" onclick="sel(this,'bouwjaar_indicatie','Jonger dan 10 jaar',5)">&#10024; Jonger dan 10 jaar</button>
+      <button class="ob" onclick="sel(this,'bouwjaar_indicatie','Tussen 10 en 25 jaar',5)">&#9875; Tussen 10 en 25 jaar</button>
+      <button class="ob" onclick="sel(this,'bouwjaar_indicatie','Klassieker (25+ jaar)',5)">&#127963; Klassieker (25+ jaar)</button>
     </div>
   </div>
 
   <div class="step" id="s5">
     <button class="btn-back" onclick="go(4)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/popup/131b09-boot.jpg">
+    <img class="q-img" src="https://aquaservice.nl/photos/popup/131b09-boot.jpg" onerror="this.style.display='none'">
     <h1>Wat is de lengte?</h1>
     <div class="og">
       <button class="ob" onclick="sel(this,'lengte','Tot 8 meter',6)">Tot 8 meter</button>
@@ -121,36 +130,42 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
 
   <div class="step" id="s6">
     <button class="btn-back" onclick="go(5)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/popup/87644b-img-5507.jpg">
+    <img class="q-img" src="https://aquaservice.nl/photos/popup/87644b-img-5507.jpg" onerror="this.style.display='none'">
     <h1>Kies de werkzaamheden:</h1>
     <div class="og">
-      <button class="ob" onclick="tog(this,'Schilderwerk Romp', 4500)">🎨 Schilderwerk Romp</button>
-      <button class="ob" onclick="tog(this,'Schilderwerk Opbouw', 4800)">🖌️ Schilderwerk Opbouw</button>
-      <button class="ob" onclick="tog(this,'Elektrische installatie', 3200)">⚡ Elektrische installatie</button>
-      <button class="ob" onclick="tog(this,'Motor & Techniek', 5000)">⚙️ Motor & Techniek</button>
-      <button class="ob" onclick="tog(this,'Teakdek / Flexiteek', 6500)">🪵 Teakdek / Flexiteek</button>
-      <button class="ob" onclick="tog(this,'Boegschroef', 4500)">🔄 Boegschroef</button>
-      <button class="ob" onclick="tog(this,'Hekschroef', 4500)">🔄 Hekschroef</button>
-      <button class="ob" onclick="tog(this,'Interieur & Stoffering', 4200)">🛋️ Interieur & Stoffering</button>
-      <button class="ob" onclick="tog(this,'Sanitair & Drinkwater', 2800)">🚿 Sanitair & Drinkwater</button>
-      <button class="ob" onclick="tog(this,'Navigatie', 3800)">🛰️ Navigatier</button>
+      <button class="ob" onclick="tog(this,'Schilderwerk Romp',4500)">&#127912; Schilderwerk Romp</button>
+      <button class="ob" onclick="tog(this,'Schilderwerk Opbouw',4800)">&#128396; Schilderwerk Opbouw</button>
+      <button class="ob" onclick="tog(this,'Elektrische installatie',3200)">&#9889; Elektrische installatie</button>
+      <button class="ob" onclick="tog(this,'Motor en Techniek',5000)">&#9881; Motor &amp; Techniek</button>
+      <button class="ob" onclick="tog(this,'Teakdek of Flexiteek',6500)">&#129683; Teakdek / Flexiteek</button>
+      <button class="ob" onclick="tog(this,'Boegschroef',4500)">&#128260; Boegschroef</button>
+      <button class="ob" onclick="tog(this,'Hekschroef',4500)">&#128260; Hekschroef</button>
+      <button class="ob" onclick="tog(this,'Interieur en Stoffering',4200)">&#128715; Interieur &amp; Stoffering</button>
+      <button class="ob" onclick="tog(this,'Sanitair en Drinkwater',2800)">&#128703; Sanitair &amp; Drinkwater</button>
+      <button class="ob" onclick="tog(this,'Navigatie',3800)">&#128752; Navigatie</button>
     </div>
     <button class="btn" id="btn-cond" onclick="go(7)" disabled>Volgende stap &rarr;</button>
   </div>
 
   <div class="step" id="s7">
     <button class="btn-back" onclick="go(6)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/popup/68395a-1.jpg">
+    <img class="q-img" src="https://aquaservice.nl/photos/popup/68395a-1.jpg" onerror="this.style.display='none'">
     <h1>Foto van de boot</h1>
-    <div class="ob" onclick="document.getElementById('ph-in').click()" style="justify-content:center; border:2px dashed var(--fa)">📸 Foto uploaden (optioneel)</div>
+    <p style="font-size:13px;color:var(--mu);margin-bottom:12px">Optioneel &mdash; onze specialisten kijken er alvast naar.</p>
     <input type="file" id="ph-in" accept="image/*" style="display:none" onchange="handleFile(this)">
-    <div id="preview-container"><img id="preview-img" src=""></div>
-    <button class="btn" style="margin-top:20px" onclick="go(8)">Naar gegevens &rarr;</button>
+    <div class="foto-drop" id="foto-drop" onclick="document.getElementById('ph-in').click()">
+      <div id="foto-inner">&#128247; Foto uploaden (optioneel)</div>
+      <img class="foto-prev" id="foto-prev" alt="Preview"/>
+    </div>
+    <div class="foto-status" id="foto-status"></div>
+    <div class="foto-uploading" id="foto-uploading">&#8987; Foto wordt opgeslagen...</div>
+    <button class="btn" style="margin-top:12px" onclick="go(8)">Naar gegevens &rarr;</button>
+    <button class="btn-back" style="display:block;width:100%;text-align:center;margin-top:8px" onclick="go(8)">Overslaan &mdash; geen foto</button>
   </div>
 
   <div class="step" id="s8">
     <button class="btn-back" onclick="go(7)">&larr; terug</button>
-    <img class="q-img" src="https://aquaservice.nl/photos/popup/131b09-boot.jpg">
+    <img class="q-img" src="https://aquaservice.nl/photos/popup/131b09-boot.jpg" onerror="this.style.display='none'">
     <h1>Uw gegevens</h1>
     <input class="f" id="fname" placeholder="Uw naam *">
     <input class="f" id="email" type="email" placeholder="E-mailadres *">
@@ -159,108 +174,240 @@ input.f{width:100%;padding:14px;border:2px solid var(--blauw-l);border-radius:va
   </div>
 
   <div class="step" id="s-result">
-    <img class="q-img" src="https://aquaservice.nl/photos/popup/87644b-img-5507.jpg">
+    <img class="q-img" src="https://aquaservice.nl/photos/popup/87644b-img-5507.jpg" onerror="this.style.display='none'">
     <h1>Uw Indicatie</h1>
-    <div class="prijs-kaart"><div id="spec-list"></div><div class="spec-totaal"><span>Totaal indicatie</span><span id="total-price">€ 0,-</span></div></div>
-    <div class="disclaimer">**Disclaimer:** Deze indicatie is een schatting op basis van gemiddelden. De definitieve prijs wordt vastgesteld na een fysieke inspectie.</div>
+    <div class="prijs-kaart">
+      <div id="spec-list"></div>
+      <div class="spec-totaal"><span>Totaal indicatie</span><span id="total-price">&euro; 0,-</span></div>
+    </div>
+    <div class="disclaimer">Deze indicatie is een schatting op basis van gemiddelden. De definitieve prijs wordt vastgesteld na een vrijblijvende inspectie door onze specialisten.</div>
     <button class="btn" id="btn-contact" onclick="requestContact()">Vrijblijvend gesprek plannen</button>
-    <div id="avg-msg">Bedankt! Wij nemen zo spoedig mogelijk contact met u op.</div>
+    <p style="text-align:center;margin-top:12px;font-size:13px"><a href="https://aquaservice.nl/referenties" target="_blank" style="color:var(--blauw);text-decoration:underline">Lees hier alle referenties</a></p>
+    <div class="bevestiging" id="bevestiging">&#10003; Bedankt, we nemen binnenkort contact met u op!</div>
   </div>
+
 </div>
 
 <script>
-var st = { 
-  type:'', 
-  bootname:'', 
-  bouwjaar_indicatie:'',
-  lengte:'', 
-  selectedItems:[], 
-  photoData: null, 
-  voornaam:'', 
-  email:'', 
-  telefoon:'', 
-  totaal_indicatie:'', 
-  contact_verzoek:'NEE' 
+var st = {
+  type:'', bootname:'', bouwjaar_indicatie:'', lengte:'',
+  selectedItems:[], photoUrl:'', photoName:'',
+  voornaam:'', email:'', telefoon:'',
+  totaal_indicatie:'', contact_verzoek:'NEE',
+  session_id:'mbs-' + Date.now() + '-' + Math.random().toString(36).slice(2,6),
+  bron:'MBS Sneek 2025'
 };
+
 var steps = ['s1','s2','s3','s4','s5','s6','s7','s8','s-result'];
-const WEBHOOK_URL = 'https://n8n-aqs.vimdesk.io/webhook/164b60d5-48a0-4f2f-8202-4a47e4fd2bef';
+var WEBHOOK = 'https://n8n-aqs.vimdesk.io/webhook/164b60d5-48a0-4f2f-8202-4a47e4fd2bef';
+var SB_URL = 'https://heefuksdjeunqwgqdcoj.supabase.co';
+var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhlZWZ1a3NkamV1bnF3Z3FkY29qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUyMjE4ODYsImV4cCI6MjA5MDc5Nzg4Nn0.sfOw0ceENEBGVyLivbPWbZxvJtUu2axrVUAWM78f8S4';
+var SB_BUCKET = 'refit-fotos';
 
 function go(n) {
-  steps.forEach((id, i) => { document.getElementById(id).style.display = (i + 1 === n) ? 'block' : 'none'; });
-  document.getElementById('prog-fill').style.width = (n / steps.length) * 100 + '%';
-  window.scrollTo(0,0);
+  steps.forEach(function(id, i) {
+    var el = document.getElementById(id);
+    if (el) { el.classList.remove('active'); el.style.display = ''; }
+  });
+  var el = document.getElementById(steps[n-1]);
+  if (el) el.classList.add('active');
+  document.getElementById('prog-fill').style.width = (n / steps.length * 100) + '%';
+  window.scrollTo(0, 0);
 }
 
 function sel(btn, key, val, next) {
   st[key] = val;
-  btn.closest('.og').querySelectorAll('.ob').forEach(b => b.classList.remove('sel'));
+  btn.closest('.og').querySelectorAll('.ob').forEach(function(b) { b.classList.remove('sel'); });
   btn.classList.add('sel');
-  setTimeout(() => go(next), 200);
+  setTimeout(function() { go(next); }, 200);
 }
 
 function tog(btn, name, price) {
   btn.classList.toggle('sel');
-  if(btn.classList.contains('sel')) {
+  if (btn.classList.contains('sel')) {
     st.selectedItems.push({name: name, basePrice: price});
   } else {
-    st.selectedItems = st.selectedItems.filter(i => i.name !== name);
+    st.selectedItems = st.selectedItems.filter(function(i) { return i.name !== name; });
   }
   document.getElementById('btn-cond').disabled = (st.selectedItems.length === 0);
 }
 
 function handleFile(inp) {
-  if (inp.files && inp.files[0]) {
-    const reader = new FileReader();
-    reader.onload = e => {
-      st.photoData = e.target.result; // Slaat echte Base64 data op
-      document.getElementById('preview-container').style.display = 'block';
-      document.getElementById('preview-img').src = e.target.result;
+  if (!inp.files || !inp.files[0]) return;
+  var file = inp.files[0];
+  if (file.size > 15 * 1024 * 1024) { alert('Foto is te groot (max 15MB).'); return; }
+  st.photoName = file.name;
+
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    // Preview tonen
+    var prev = document.getElementById('foto-prev');
+    var inner = document.getElementById('foto-inner');
+    var drop = document.getElementById('foto-drop');
+    prev.src = e.target.result;
+    prev.style.display = 'block';
+    inner.style.display = 'none';
+    drop.classList.add('has-p');
+
+    // Comprimeren en uploaden naar Supabase
+    var img = new Image();
+    img.onload = function() {
+      var maxW = 1400, maxH = 1050;
+      var w = img.width, h = img.height;
+      if (w > maxW || h > maxH) {
+        var ratio = Math.min(maxW/w, maxH/h);
+        w = Math.round(w * ratio); h = Math.round(h * ratio);
+      }
+      var canvas = document.createElement('canvas');
+      canvas.width = w; canvas.height = h;
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+      canvas.toBlob(function(blob) {
+        var naam = st.session_id + '.jpg';
+        document.getElementById('foto-uploading').style.display = 'block';
+        fetch(SB_URL + '/storage/v1/object/' + SB_BUCKET + '/' + naam, {
+          method: 'POST',
+          headers: {
+            'Authorization': 'Bearer ' + SB_KEY,
+            'Content-Type': 'image/jpeg',
+            'x-upsert': 'true'
+          },
+          body: blob
+        }).then(function(r) {
+          document.getElementById('foto-uploading').style.display = 'none';
+          var status = document.getElementById('foto-status');
+          status.style.display = 'block';
+          if (r.ok) {
+            st.photoUrl = SB_URL + '/storage/v1/object/public/' + SB_BUCKET + '/' + naam;
+            status.textContent = '\u2713 Foto opgeslagen';
+            status.style.color = '#1D9E75';
+          } else {
+            status.textContent = '\u26a0 Upload mislukt \u2014 we gaan door zonder foto';
+            status.style.color = '#8a90b0';
+          }
+        }).catch(function() {
+          document.getElementById('foto-uploading').style.display = 'none';
+          var status = document.getElementById('foto-status');
+          status.style.display = 'block';
+          status.textContent = '\u26a0 Upload mislukt \u2014 we gaan door zonder foto';
+          status.style.color = '#8a90b0';
+        });
+      }, 'image/jpeg', 0.82);
     };
-    reader.readAsDataURL(inp.files[0]);
-  }
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
 }
 
 function showResult() {
-  st.voornaam = document.getElementById('fname').value; 
-  st.email = document.getElementById('email').value;
-  st.telefoon = document.getElementById('phone').value;
-  st.bootname = document.getElementById('bootname').value;
-  
-  if(!st.voornaam || !st.email) { alert("Vul a.u.b. uw naam en email in."); return; }
-  
-  let mult = st.lengte === '8 tot 12 meter' ? 1.75 : (st.lengte === '12 meter+' ? 2.9 : 1);
-  let totalMin = 0, totalMax = 0, html = "";
-  
-  st.selectedItems.forEach(i => {
-    let pMin = Math.round((i.basePrice * mult) / 100) * 100;
-    let pMax = Math.round(((i.basePrice * mult) * 1.35) / 100) * 100;
-    i.prijs_indicatie = `€ ${pMin.toLocaleString('nl-NL')} - € ${pMax.toLocaleString('nl-NL')}`;
+  st.voornaam = document.getElementById('fname').value.trim();
+  st.email = document.getElementById('email').value.trim();
+  st.telefoon = document.getElementById('phone').value.trim();
+  st.bootname = document.getElementById('bootname').value.trim();
+
+  if (!st.voornaam || !st.email) { alert('Vul a.u.b. uw naam en e-mailadres in.'); return; }
+
+  var mult = st.lengte === '8 tot 12 meter' ? 1.75 : (st.lengte === '12 meter+' ? 2.9 : 1);
+  var totalMin = 0, totalMax = 0, html = '';
+
+  st.selectedItems.forEach(function(i) {
+    var pMin = Math.round((i.basePrice * mult) / 100) * 100;
+    var pMax = Math.round((i.basePrice * mult * 1.35) / 100) * 100;
+    i.prijs_indicatie = '\u20ac ' + pMin.toLocaleString('nl-NL') + ' - \u20ac ' + pMax.toLocaleString('nl-NL');
     totalMin += pMin; totalMax += pMax;
-    html += `<div class="spec-item"><span>${i.name}</span><span class="spec-range">${i.prijs_indicatie}</span></div>`;
+    html += '<div class="spec-item"><span>' + i.name + '</span><span class="spec-range">' + i.prijs_indicatie + '</span></div>';
   });
-  
-  st.totaal_indicatie = `€ ${totalMin.toLocaleString('nl-NL')} - € ${totalMax.toLocaleString('nl-NL')}`;
+
+  st.totaal_indicatie = '\u20ac ' + totalMin.toLocaleString('nl-NL') + ' - \u20ac ' + totalMax.toLocaleString('nl-NL');
   go(9);
   document.getElementById('spec-list').innerHTML = html;
   document.getElementById('total-price').textContent = st.totaal_indicatie;
-  // sendToN8N hier verwijderd om dubbele mails te voorkomen.
+
+  // Opslaan in Supabase + webhook naar n8n
+  saveLead();
+  sendWebhook('prijs_berekend');
 }
 
 function requestContact() {
-  st.contact_verzoek = "JA";
+  st.contact_verzoek = 'JA';
   document.getElementById('btn-contact').style.display = 'none';
-  document.getElementById('avg-msg').style.display = 'block';
-  sendToN8N(); // Mail wordt nu pas verstuurd als er echt op de knop is geklikt.
+  document.getElementById('bevestiging').style.display = 'block';
+
+  // Update Supabase + webhook naar n8n
+  updateLead();
+  sendWebhook('contact_request');
 }
 
-function sendToN8N() {
-  fetch(WEBHOOK_URL, { 
-    method: 'POST', 
-    headers: {'Content-Type': 'application/json'}, 
-    body: JSON.stringify(st) 
-  })
-  .then(response => console.log('Verzonden naar n8n'))
-  .catch(error => console.error('Fout bij verzenden:', error));
+function saveLead() {
+  fetch(SB_URL + '/rest/v1/refit_leads', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'apikey': SB_KEY,
+      'Authorization': 'Bearer ' + SB_KEY,
+      'Prefer': 'return=minimal'
+    },
+    body: JSON.stringify({
+      session_id: st.session_id,
+      voornaam: st.voornaam,
+      email: st.email,
+      telefoon: st.telefoon || null,
+      boot_type: st.type,
+      boot_naam: st.bootname || null,
+      boot_leeftijd: st.bouwjaar_indicatie,
+      boot_lengte: st.lengte,
+      werkzaamheden: st.selectedItems.map(function(i){ return i.name; }).join(', '),
+      totaal_indicatie: st.totaal_indicatie,
+      foto_naam: st.photoName || null,
+      foto_url: st.photoUrl || null,
+      wil_gesprek: false,
+      bron: st.bron
+    })
+  }).then(function(r){
+    console.log(r.ok ? 'Lead opgeslagen in Supabase' : 'Supabase fout: ' + r.status);
+  }).catch(function(e){ console.log('Supabase fout:', e); });
+}
+
+function updateLead() {
+  fetch(SB_URL + '/rest/v1/refit_leads?session_id=eq.' + st.session_id, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      'apikey': SB_KEY,
+      'Authorization': 'Bearer ' + SB_KEY,
+      'Prefer': 'return=minimal'
+    },
+    body: JSON.stringify({ wil_gesprek: true })
+  }).then(function(r){
+    console.log(r.ok ? 'Lead bijgewerkt in Supabase' : 'Supabase update fout: ' + r.status);
+  }).catch(function(e){ console.log('Supabase update fout:', e); });
+}
+
+function sendWebhook(event) {
+  fetch(WEBHOOK, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      event: event,
+      session_id: st.session_id,
+      bron: st.bron,
+      voornaam: st.voornaam,
+      email: st.email,
+      telefoon: st.telefoon || '-',
+      boot_type: st.type,
+      boot_naam: st.bootname || '-',
+      boot_leeftijd: st.bouwjaar_indicatie,
+      boot_lengte: st.lengte,
+      werkzaamheden: st.selectedItems.map(function(i) { return i.name; }).join(', '),
+      foto_url: st.photoUrl || '-',
+      totaal_indicatie: st.totaal_indicatie,
+      contact_verzoek: st.contact_verzoek,
+      timestamp: new Date().toISOString()
+    })
+  }).then(function(r) {
+    console.log(event + ' verstuurd naar n8n: ' + r.status);
+  }).catch(function(e) {
+    console.log('Webhook fout:', e);
+  });
 }
 </script>
 </body>
